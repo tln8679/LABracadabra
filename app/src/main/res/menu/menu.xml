@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/Lessons"
+        android:text="Lessons"
+        android:title="Lessons"
+        />
+    <item
+        android:id="@+id/games"
+        android:text="Games"
+        android:title="Games"
+        />
+    <item
+        android:id="@+id/quizzes"
+        android:text="Quiz"
+        android:title="Quiz"
+        />
+    <item
+        android:id="@+id/register"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="Register"
+        />
+    <item
+        android:id="@+id/settings"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="Settings"
+        />
+
+
+</menu>

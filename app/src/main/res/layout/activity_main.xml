@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tblScroll"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    tools:context="com.me.labracadabra.MainActivity"
+    tools:ignore="ExtraText">
+
+
+
+<TableLayout
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+
+android:stretchColumns="*">
+
+
+<TableRow android:layout_width="wrap_content">
+    android:layout_width="0dp"
+
+    <Button
+        android:layout_weight="1"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:id="@+id/buttonFruits"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:text="Fruits!"
+
+        android:textSize="30sp" />
+
+    <Button
+        android:layout_weight="1"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:id="@+id/buttonVegetables"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:text="Vegetables"
+        android:textSize="26sp" />
+</TableRow>
+
+<TableRow>
+    android:layout_width="0dp"
+
+    <Button
+        android:layout_weight="1"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:id="@+id/buttonProtein"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:text="Protein"
+        android:textSize="30sp" />
+
+    <Button
+        android:layout_weight="1"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:id="@+id/buttonCarbs"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:text="Carbs"
+        android:textSize="30sp" />
+</TableRow>
+
+<TableRow>
+    android:layout_width="0dp"
+
+    <Button
+        android:layout_weight="1"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:id="@+id/buttonVitamins"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:text="Vitamin"
+        android:textSize="30sp" />
+
+    <Button
+        android:layout_weight="1"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:id="@+id/buttonFats"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:text="Fats"
+        android:textSize="30sp" />
+</TableRow>
+
+<TableRow>
+    android:layout_width="0dp"
+
+    <Button
+        android:layout_weight="1"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:id="@+id/buttonFiber"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:text="Fiber"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/buttonDairy"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_weight="1"
+        android:text="Dairy"
+        android:textSize="30sp" />
+</TableRow>
+
+   <!-- </ScrollView>-->
+</TableLayout>
+</ScrollView>
