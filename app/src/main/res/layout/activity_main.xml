@@ -22,22 +22,24 @@ android:stretchColumns="*">
     android:layout_width="0dp"
 
     <Button
-        android:layout_weight="1"
-        style="@style/Widget.AppCompat.Button.Colored"
         android:id="@+id/buttonFruits"
+
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:text="Fruits!"
-
+        android:layout_weight="1"
+        android:onClick="openFruits"
+        android:text="Fruits"
         android:textSize="30sp" />
 
     <Button
-        android:layout_weight="1"
-        style="@style/Widget.AppCompat.Button.Colored"
         android:id="@+id/buttonVegetables"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:layout_weight="1"
         android:text="Vegetables"
+        android:onClick="vegBtnClick"
         android:textSize="26sp" />
 </TableRow>
 
