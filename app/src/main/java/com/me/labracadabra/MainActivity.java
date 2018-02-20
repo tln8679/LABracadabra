@@ -26,10 +26,11 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu,menu);
 
-        //Change menu icon color
-      //  Drawable icon = menu.getItem(0).getIcon();
-//        icon.mutate();
-     //   icon.setColorFilter(getResources().getColor(android.R.color.white), PorterDuff.Mode.SRC_IN);
+        dbManager quizDb = new dbManager(this);
+        //  Change menu icon color
+        //  Drawable icon = menu.getItem(0).getIcon();
+        //  icon.mutate();
+        //  icon.setColorFilter(getResources().getColor(android.R.color.white), PorterDuff.Mode.SRC_IN);
 
         return super.onCreateOptionsMenu(menu);
     }

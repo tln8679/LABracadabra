@@ -11,104 +11,104 @@
 
 
 
-<TableLayout
-android:layout_width="match_parent"
-android:layout_height="match_parent"
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
 
-android:stretchColumns="*">
+        android:stretchColumns="*">
 
 
-<TableRow android:layout_width="wrap_content">
-    android:layout_width="0dp"
+        <TableRow android:layout_width="wrap_content">
+            android:layout_width="0dp"
 
-    <Button
-        android:id="@+id/buttonFruits"
+            <Button
+                android:id="@+id/buttonFruits"
 
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_weight="1"
-        android:onClick="openFruits"
-        android:text="Fruits"
-        android:textSize="30sp" />
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:onClick="openFruits"
+                android:text="Fruits"
+                android:textSize="30sp" />
 
-    <Button
-        android:id="@+id/buttonVegetables"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_weight="1"
-        android:text="Vegetables"
-        android:onClick="vegBtnClick"
-        android:textSize="26sp" />
-</TableRow>
+            <Button
+                android:id="@+id/buttonVegetables"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:text="Vegetables"
+                android:onClick="vegBtnClick"
+                android:textSize="26sp" />
+        </TableRow>
 
-<TableRow>
-    android:layout_width="0dp"
+        <TableRow>
+            android:layout_width="0dp"
 
-    <Button
-        android:layout_weight="1"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:id="@+id/buttonProtein"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:text="Protein"
-        android:textSize="30sp" />
+            <Button
+                android:layout_weight="1"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:id="@+id/buttonProtein"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:text="Protein"
+                android:textSize="30sp" />
 
-    <Button
-        android:layout_weight="1"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:id="@+id/buttonCarbs"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:text="Carbs"
-        android:textSize="30sp" />
-</TableRow>
+            <Button
+                android:layout_weight="1"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:id="@+id/buttonCarbs"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:text="Carbs"
+                android:textSize="30sp" />
+        </TableRow>
 
-<TableRow>
-    android:layout_width="0dp"
+        <TableRow>
+            android:layout_width="0dp"
 
-    <Button
-        android:layout_weight="1"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:id="@+id/buttonVitamins"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:text="Vitamin"
-        android:textSize="30sp" />
+            <Button
+                android:layout_weight="1"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:id="@+id/buttonVitamins"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:text="Vitamin"
+                android:textSize="30sp" />
 
-    <Button
-        android:layout_weight="1"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:id="@+id/buttonFats"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:text="Fats"
-        android:textSize="30sp" />
-</TableRow>
+            <Button
+                android:layout_weight="1"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:id="@+id/buttonFats"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:text="Fats"
+                android:textSize="30sp" />
+        </TableRow>
 
-<TableRow>
-    android:layout_width="0dp"
+        <TableRow>
+            android:layout_width="0dp"
 
-    <Button
-        android:layout_weight="1"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:id="@+id/buttonFiber"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:text="Fiber"
-        android:textSize="30sp" />
+            <Button
+                android:layout_weight="1"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:id="@+id/buttonFiber"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:text="Fiber"
+                android:textSize="30sp" />
 
-    <Button
-        android:id="@+id/buttonDairy"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_weight="1"
-        android:text="Dairy"
-        android:textSize="30sp" />
-</TableRow>
+            <Button
+                android:id="@+id/buttonDairy"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:text="Dairy"
+                android:textSize="30sp" />
+        </TableRow>
 
-   <!-- </ScrollView>-->
-</TableLayout>
+        <!-- </ScrollView>-->
+    </TableLayout>
 </ScrollView>
