@@ -35,20 +35,62 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    public void onClick(View v) {
 
-    /** Called when the user taps Fruit Module */
-    public void openFruits(View view) {
-        Intent intent = new Intent(this, FruitActivity.class);
-       // EditText editText = (EditText) findViewById(R.id.editText);
-       // String message = editText.getText().toString();
-       // intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
+        switch (v.getId()) {
+
+            case R.id.buttonFruits:
+                // Loads the screen for the fruit information
+                Intent intent = new Intent(this, FruitActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.buttonVegetables:
+                // Loads the screen for the fruit information
+                Intent vegIntent = new Intent(this, VegetablesActivity.class);
+                startActivity(vegIntent);
+                break;
+
+            case R.id.buttonProtein:
+                // do your code
+                break;
+
+            case R.id.buttonCarbs:
+                // code
+                break;
+
+            case R.id.buttonDairy:
+                // code
+                break;
+
+            case R.id.buttonFats:
+                // code
+                break;
+
+            case R.id.buttonVitamins:
+                // code
+                break;
+
+            case R.id.buttonFiber:
+                // code
+                break;
+
+            case R.id.games:
+                // start games screen
+                break;
+
+            case R.id.quizzes:
+                // start quiz screen
+                break;
+
+
+            default:
+                break;
+        }
+
     }
 
-    /** Called when the user taps Vegetable Module */
-    public void vegBtnClick(View view){
 
-    }
 
 
 }

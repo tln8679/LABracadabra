@@ -17,6 +17,49 @@
 
         android:stretchColumns="*">
 
+        <TableRow>
+            android:layout_width="0dp"
+            <Button
+                android:id="@+id/modules"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="Lessons"
+                android:textSize="30sp"
+                />
+
+        </TableRow>
+
+        <TableRow>
+            android:layout_width="0dp"
+            <Button
+                android:id="@+id/quizzes"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="Quizzes"
+                android:textSize="30sp"
+            />
+
+        </TableRow>
+        <TableRow>
+            android:layout_width="0dp"
+            <Button
+                android:id="@+id/games"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="Games"
+                android:textSize="30sp"
+                />
+
+        </TableRow>
 
         <TableRow android:layout_width="wrap_content">
             android:layout_width="0dp"
@@ -28,7 +71,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
-                android:onClick="openFruits"
+                android:onClick="onClick"
                 android:text="Fruits"
                 android:textSize="30sp" />
 
@@ -39,8 +82,8 @@
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:text="Vegetables"
-                android:onClick="vegBtnClick"
-                android:textSize="26sp" />
+                android:onClick="onClick"
+                android:textSize="25sp" />
         </TableRow>
 
         <TableRow>
@@ -53,6 +96,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:text="Protein"
+                android:onClick="onClick"
                 android:textSize="30sp" />
 
             <Button
@@ -62,6 +106,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:text="Carbs"
+                android:onClick="onClick"
                 android:textSize="30sp" />
         </TableRow>
 
@@ -75,6 +120,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:text="Vitamin"
+                android:onClick="onClick"
                 android:textSize="30sp" />
 
             <Button
@@ -84,6 +130,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:text="Fats"
+                android:onClick="onClick"
                 android:textSize="30sp" />
         </TableRow>
 
@@ -97,6 +144,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:text="Fiber"
+                android:onClick="onClick"
                 android:textSize="30sp" />
 
             <Button
@@ -106,6 +154,7 @@
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:text="Dairy"
+                android:onClick="onClick"
                 android:textSize="30sp" />
         </TableRow>
 
