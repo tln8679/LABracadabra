@@ -2,5 +2,6 @@
 <resources>
     <color name="colorPrimary">#000000</color>
     <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#49c921</color>
+    <color name="colorAccent">#acb7a8</color>
+    <color name="tabColor">#345828</color>
 </resources>

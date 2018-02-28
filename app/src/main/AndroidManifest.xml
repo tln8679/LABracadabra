@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.me.labracadabra">
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,13 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity
             android:name=".VegetablesActivity"
             android:label="@string/title_activity_vegetables"
@@ -24,12 +23,6 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.me.labracadabra.MainActivity" />
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".FruitActivity"
@@ -39,13 +32,75 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.me.labracadabra.MainActivity" />
-
+        </activity>
+        <activity
+            android:name=".ProteinActivity"
+            android:label="@string/title_activity_protein"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.me.labracadabra.MainActivity" />
+        </activity>
+        <activity
+            android:name=".CarbsActivity"
+            android:label="@string/title_activity_carbs"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.me.labracadabra.MainActivity" />
+        </activity>
+        <activity
+            android:name=".DairyActivity"
+            android:label="@string/title_activity_dairy"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.me.labracadabra.MainActivity" />
+        </activity>
+        <activity
+            android:name=".FatsActivity"
+            android:label="@string/title_activity_fats"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".VitaminActivity"
+            android:label="@string/title_activity_vitamins"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.me.labracadabra.MainActivity" />
+        </activity>
+        <activity
+            android:name=".FiberActivity"
+            android:label="@string/title_activity_fiber"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.me.labracadabra.MainActivity" />
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.me.labracadabra.MainActivity" />
+        </activity>
+        <activity android:name=".LandingScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

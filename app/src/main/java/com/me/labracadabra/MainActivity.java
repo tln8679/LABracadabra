@@ -1,5 +1,6 @@
 package com.me.labracadabra;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.PorterDuff;
@@ -27,11 +28,12 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu,menu);
 
         dbManager quizDb = new dbManager(this);
-        //  Change menu icon color
-        //  Drawable icon = menu.getItem(0).getIcon();
-        //  icon.mutate();
-        //  icon.setColorFilter(getResources().getColor(android.R.color.white), PorterDuff.Mode.SRC_IN);
 
+        /*  Change menu icon color
+          Drawable icon = menu.getItem(0).getIcon();
+          icon.mutate();
+          icon.setColorFilter(getResources().getColor(android.R.color.white), PorterDuff.Mode.SRC_IN);
+*/
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -52,27 +54,44 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.buttonProtein:
-                // do your code
+                // Loads the screen for the protein information
+                Intent proIntent = new Intent(this, ProteinActivity.class);
+                startActivity(proIntent);
                 break;
 
             case R.id.buttonCarbs:
-                // code
+                // Loads the screen for the protein information
+                Intent carbsIntent = new Intent(this, CarbsActivity.class);
+                startActivity(carbsIntent);
                 break;
 
             case R.id.buttonDairy:
-                // code
+                // Loads the screen for the dairy information
+                Intent dairyIntent = new Intent(this, DairyActivity.class);
+                startActivity(dairyIntent);
                 break;
 
             case R.id.buttonFats:
-                // code
+                // Loads the screen for the fats information
+                Intent fatsIntent = new Intent(this, FatsActivity.class);
+                startActivity(fatsIntent);
                 break;
 
             case R.id.buttonVitamins:
-                // code
+                // Loads the screen for the vitamins information
+                Intent vitaminsIntent = new Intent(this, VitaminActivity.class);
+                startActivity(vitaminsIntent);
                 break;
 
             case R.id.buttonFiber:
-                // code
+                // Loads the screen for the fiber information
+                Intent fiberIntent = new Intent(this, FiberActivity.class);
+                startActivity(fiberIntent);
+                break;
+
+            case R.id.settings:
+                Intent settingsIntent = new Intent(this, SettingsActivity.class);
+                startActivity(settingsIntent);
                 break;
 
             case R.id.games:

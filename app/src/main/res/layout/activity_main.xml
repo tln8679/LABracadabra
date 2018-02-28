@@ -5,11 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/tblScroll"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    tools:ignore="ExtraText">
     tools:context="com.me.labracadabra.MainActivity"
     tools:ignore="ExtraText">
-
-
 
     <TableLayout
         android:layout_width="match_parent"
@@ -19,38 +18,21 @@
 
         <TableRow>
             android:layout_width="0dp"
+
             <Button
-                android:id="@+id/modules"
-                style="@style/Widget.AppCompat.Button.Colored"
+                android:id="@+id/settings"
+                style="@style/Widget.AppCompat.ActionBar.TabBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="onClick"
-                android:text="Lessons"
+                android:text="Settings"
                 android:textSize="30sp"
+
                 />
-
-        </TableRow>
-
-        <TableRow>
-            android:layout_width="0dp"
-            <Button
-                android:id="@+id/quizzes"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="onClick"
-                android:text="Quizzes"
-                android:textSize="30sp"
-            />
-
-        </TableRow>
-        <TableRow>
-            android:layout_width="0dp"
             <Button
                 android:id="@+id/games"
-                style="@style/Widget.AppCompat.Button.Colored"
+                style="@style/Widget.AppCompat.ActionBar.TabBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -60,6 +42,11 @@
                 />
 
         </TableRow>
+
+
+
+
+
 
         <TableRow android:layout_width="wrap_content">
             android:layout_width="0dp"
@@ -71,6 +58,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
+                android:background="@drawable/ic_fruit_icon_fruitsicon2"
                 android:onClick="onClick"
                 android:text="Fruits"
                 android:textSize="30sp" />
@@ -81,8 +69,8 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
-                android:text="Vegetables"
                 android:onClick="onClick"
+                android:text="Vegetables"
                 android:textSize="25sp" />
         </TableRow>
 
