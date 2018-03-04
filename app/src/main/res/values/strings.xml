@@ -123,5 +123,18 @@
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="labracadabra">LABracadabra</string>
     <string name="todo">TODO</string>
+    <string name="where_are_you_located">What is your\n location?</string>
+    <string name="title_activity_magician">MagicianActivity</string>
+    <string name="choose_your_magician">Choose your \n Magician!</string>
+    <string name="magician_three">Magician Three</string>
+    <string name="magician_two">Magician Two</string>
+    <string name="magician_one">Magician one</string>
+    <string name="doctor_s_office">Doctor\'s Office</string>
+    <string name="automobile_shop">Automobile Shop</string>
+    <string name="park">Park</string>
+    <string name="library">Library</string>
+    <string name="hardware_store">Hardware Store</string>
+    <string name="grocery_store">Grocery Store</string>
+    <string name="which_is_not_like_the_other">Which is not like the other?</string>
 
 </resources>

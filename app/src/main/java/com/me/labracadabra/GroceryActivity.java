@@ -1,27 +1,18 @@
 package com.me.labracadabra;
 
-import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
 
 
-public class MainActivity extends AppCompatActivity {
+public class GroceryActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_grocery);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -41,42 +32,42 @@ public class MainActivity extends AppCompatActivity {
 
         switch (v.getId()) {
 
-            case R.id.buttonFruits:
+            case R.id.produce:
                 // Loads the screen for the fruit information
-                Intent intent = new Intent(this, FruitActivity.class);
+                Intent intent = new Intent(this, ProduceActivity.class);
                 startActivity(intent);
                 break;
 
-            case R.id.buttonVegetables:
+            case R.id.deli:
                 // Loads the screen for the fruit information
                 Intent vegIntent = new Intent(this, VegetablesActivity.class);
                 startActivity(vegIntent);
                 break;
 
-            case R.id.buttonProtein:
+            case R.id.dairy:
                 // Loads the screen for the protein information
                 Intent proIntent = new Intent(this, ProteinActivity.class);
                 startActivity(proIntent);
                 break;
 
-            case R.id.buttonCarbs:
+            case R.id.market:
                 // Loads the screen for the protein information
                 Intent carbsIntent = new Intent(this, CarbsActivity.class);
                 startActivity(carbsIntent);
                 break;
 
-            case R.id.buttonDairy:
+            case R.id.canned:
                 // Loads the screen for the dairy information
                 Intent dairyIntent = new Intent(this, DairyActivity.class);
                 startActivity(dairyIntent);
                 break;
 
-            case R.id.buttonFats:
+            case R.id.bakery:
                 // Loads the screen for the fats information
-                Intent fatsIntent = new Intent(this, FatsActivity.class);
+                Intent fatsIntent = new Intent(this, CarbsActivity.class);
                 startActivity(fatsIntent);
                 break;
-
+/**
             case R.id.buttonVitamins:
                 // Loads the screen for the vitamins information
                 Intent vitaminsIntent = new Intent(this, VitaminActivity.class);
@@ -88,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent fiberIntent = new Intent(this, FiberActivity.class);
                 startActivity(fiberIntent);
                 break;
+ */
 
             case R.id.settings:
                 Intent settingsIntent = new Intent(this, SettingsActivity.class);
@@ -108,7 +100,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
 
 
 

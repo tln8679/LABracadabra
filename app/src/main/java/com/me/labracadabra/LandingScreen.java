@@ -22,8 +22,8 @@ public class LandingScreen extends AppCompatActivity {
             @Override
             public void run() {
                 /* Create an Intent that will start the Menu-Activity. */
-                Intent mainIntent = new Intent(LandingScreen.this,MainActivity.class);
-                LandingScreen.this.startActivity(mainIntent);
+                Intent MagicIntent = new Intent(LandingScreen.this,MagiciansActivity.class);
+                LandingScreen.this.startActivity(MagicIntent);
                 LandingScreen.this.finish();
             }
         }, DISPLAY_LENGTH);

@@ -14,86 +14,98 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
+        <activity
+            android:name=".GroceryActivity"
+            android:parentActivityName=".Locations">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.me.labracadabra.Locations" />
+        </activity>
         <activity
             android:name=".VegetablesActivity"
             android:label="@string/title_activity_vegetables"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".GroceryActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.me.labracadabra.MainActivity" />
+                android:value="com.me.labracadabra.GroceryActivity" />
         </activity>
         <activity
-            android:name=".FruitActivity"
+            android:name=".ProduceActivity"
             android:label="@string/title_activity_fruit"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".GroceryActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.me.labracadabra.MainActivity" />
+                android:value="com.me.labracadabra.GroceryActivity" />
         </activity>
         <activity
             android:name=".ProteinActivity"
             android:label="@string/title_activity_protein"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".GroceryActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.me.labracadabra.MainActivity" />
+                android:value="com.me.labracadabra.GroceryActivity" />
         </activity>
         <activity
             android:name=".CarbsActivity"
             android:label="@string/title_activity_carbs"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".GroceryActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.me.labracadabra.MainActivity" />
+                android:value="com.me.labracadabra.GroceryActivity" />
         </activity>
         <activity
             android:name=".DairyActivity"
             android:label="@string/title_activity_dairy"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".GroceryActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.me.labracadabra.MainActivity" />
+                android:value="com.me.labracadabra.GroceryActivity" />
         </activity>
         <activity
             android:name=".FatsActivity"
             android:label="@string/title_activity_fats"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".VitaminActivity"
-            android:label="@string/title_activity_vitamins"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".GroceryActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.me.labracadabra.MainActivity" />
+                android:value="com.me.labracadabra.GroceryActivity" />
+        </activity>
+        <activity
+            android:name=".VitaminActivity"
+            android:label="@string/title_activity_vitamins"
+            android:parentActivityName=".GroceryActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.me.labracadabra.GroceryActivity" />
         </activity>
         <activity
             android:name=".FiberActivity"
             android:label="@string/title_activity_fiber"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".GroceryActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.me.labracadabra.MainActivity" />
+                android:value="com.me.labracadabra.GroceryActivity" />
         </activity>
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".GroceryActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.me.labracadabra.MainActivity" />
+                android:value="com.me.labracadabra.GroceryActivity" />
         </activity>
         <activity android:name=".LandingScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -101,6 +113,16 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name=".Locations"
+            android:parentActivityName=".MagiciansActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.me.labracadabra.MagiciansActivity" />
+        </activity>
+
+        <activity android:name=".MagiciansActivity"/>
     </application>
 
 </manifest>

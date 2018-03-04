@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tblScroll"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:ignore="ExtraText">
+    tools:context="com.me.labracadabra.GroceryActivity"
+    tools:ignore="ExtraText">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:stretchColumns="*">
+
+        <TableRow>
+
+            <TextView
+                android:fontFamily="@font/aclonica"
+                android:text="@string/choose_your_magician"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow>
+            android:layout_width="0dp"
+
+            <Button
+                android:id="@+id/mOne"
+
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="150dp"
+                android:layout_height="250dp"
+                android:layout_weight="1"
+                android:background="@drawable/ic_wizard1"
+                android:fontFamily="@font/aclonica"
+                android:onClick="onClick"
+                android:text="@string/magician_one"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+
+        </TableRow>
+
+        <TableRow android:layout_width="wrap_content">
+            android:layout_width="0dp"
+
+            <Button
+                android:id="@+id/mTwo"
+
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="150dp"
+                android:layout_height="250dp"
+                android:layout_weight="1"
+                android:background="@drawable/ic_wizard2"
+                android:fontFamily="@font/aclonica"
+                android:onClick="onClick"
+                android:text="@string/magician_two"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow>
+            android:layout_width="0dp"
+
+            <Button
+                android:id="@+id/mThree"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="150dp"
+                android:layout_height="250dp"
+                android:layout_weight="1"
+                android:background="@drawable/ic_wizard3"
+                android:fontFamily="@font/aclonica"
+                android:onClick="onClick"
+                android:text="@string/magician_three"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+
+
+
+    </TableLayout>
+</ScrollView>
