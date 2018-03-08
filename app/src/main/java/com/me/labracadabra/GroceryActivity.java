@@ -38,7 +38,7 @@ public class GroceryActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
 
-            case R.id.deli:
+           /** case R.id.deli:
                 // Loads the screen for the fruit information
                 Intent vegIntent = new Intent(this, VegetablesActivity.class);
                 startActivity(vegIntent);
@@ -80,6 +80,7 @@ public class GroceryActivity extends AppCompatActivity {
                 startActivity(fiberIntent);
                 break;
  */
+
 
             case R.id.settings:
                 Intent settingsIntent = new Intent(this, SettingsActivity.class);
