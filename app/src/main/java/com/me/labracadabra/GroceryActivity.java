@@ -1,6 +1,7 @@
 package com.me.labracadabra;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,11 +14,12 @@ public class GroceryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grocery);
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.grocery);
+        mp.start();
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu,menu);
-
         dbManager quizDb = new dbManager(this);
 
         /*  Change menu icon color
@@ -80,20 +82,6 @@ public class GroceryActivity extends AppCompatActivity {
                 startActivity(fiberIntent);
                 break;
  */
-
-
-            case R.id.settings:
-                Intent settingsIntent = new Intent(this, SettingsActivity.class);
-                startActivity(settingsIntent);
-                break;
-
-            case R.id.games:
-                // start games screen
-                break;
-
-            case R.id.quizzes:
-                // start quiz screen
-                break;
 
 
             default:

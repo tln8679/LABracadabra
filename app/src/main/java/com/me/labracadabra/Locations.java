@@ -1,9 +1,11 @@
 package com.me.labracadabra;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
 
 public class Locations extends AppCompatActivity {
 
@@ -11,6 +13,8 @@ public class Locations extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_locations);
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.loc);
+        mp.start();
     }
 
     public void onClick(View v) {

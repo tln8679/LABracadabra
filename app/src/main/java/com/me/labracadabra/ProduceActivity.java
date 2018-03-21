@@ -1,27 +1,44 @@
 package com.me.labracadabra;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.amazonaws.mobile.client.AWSMobileClient;
+import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
+
 public class ProduceActivity extends AppCompatActivity {
+
+    // Declare a DynamoDBMapper object
+    DynamoDBMapper dynamoDBMapper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_produce);
+        // Instantiate audio
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.a1);
+        mp.start();
+        // Instantiate a AmazonDynamoDBMapperClient
+        AmazonDynamoDBClient dynamoDBClient = new AmazonDynamoDBClient(AWSMobileClient.getInstance().getCredentialsProvider());
+        this.dynamoDBMapper = DynamoDBMapper.builder()
+                .dynamoDBClient(dynamoDBClient)
+                .awsConfiguration(AWSMobileClient.getInstance().getConfiguration())
+                .build();
     }
 
     public void onClick (View v){
         switch (v.getId()) {
             case R.id.banana:
                 // Wrong answer
+                MediaPlayer mp = MediaPlayer.create(this, R.raw.wrong);
+                mp.start();
                 EditText editText = (EditText)findViewById(R.id.editText);
                 TextView w1 = (TextView)findViewById(R.id.wrong);
                 w1.setText("INCORRECT");
@@ -32,6 +49,8 @@ public class ProduceActivity extends AppCompatActivity {
 
             case R.id.orange:
                 // Wrong answer
+                MediaPlayer mp2 = MediaPlayer.create(this, R.raw.wrong);
+                mp2.start();
                 EditText e1 = (EditText)findViewById(R.id.editText);
                 TextView w2 = (TextView)findViewById(R.id.wrong);
                 w2.setText("INCORRECT");
@@ -42,6 +61,8 @@ public class ProduceActivity extends AppCompatActivity {
 
             case R.id.apples:
                 // Wrong answer
+                MediaPlayer mp3 = MediaPlayer.create(this, R.raw.wrong);
+                mp3.start();
                 EditText editText2 = (EditText)findViewById(R.id.editText);
                 TextView w3 = (TextView)findViewById(R.id.wrong);
                 w3.setText("INCORRECT");
@@ -49,10 +70,19 @@ public class ProduceActivity extends AppCompatActivity {
                 int count2 = Integer.parseInt(update2)+1;
                 editText2.setText(Integer.toString(count2), TextView.BufferType.EDITABLE);
                 break;
+
             case R.id.chicken:
                 // Move to next question
-                Intent intent = new Intent(this, ProduceActivityTwo.class);
-                startActivity(intent);
+                MediaPlayer mp4 = MediaPlayer.create(this, R.raw.correct);
+                mp4.start();
+                // We don't want the audio to play over
+                new Handler().postDelayed(new Runnable(){
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent(ProduceActivity.this, ProduceActivityTwo.class);
+                        startActivity(intent);
+                    }
+                },1450);
                 break;
         }
     }

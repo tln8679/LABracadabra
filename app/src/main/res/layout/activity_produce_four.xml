@@ -16,42 +16,38 @@
 
         android:stretchColumns="*">
         <TextView
-            android:layout_marginBottom="12dp"
             android:fontFamily="@font/aclonica"
-            android:text="Where are you located in the store?"
-            android:textColor="@color/colorPrimary"
-            android:textSize="32sp"
-            android:textStyle="bold" />
-
+            android:text="Can you match the following vitamin to what they benefit?"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="36sp" />
 
         <TableRow android:layout_width="wrap_content">
             android:layout_width="0dp"
 
             <Button
-                android:id="@+id/produce"
+                android:id="@+id/vitamin_d"
 
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
-                android:background="@drawable/ic_fruit_icon_fruitsicon2"
+                android:background="@drawable/border_button"
                 android:fontFamily="@font/aclonica"
                 android:onClick="onClick"
-                android:text="Produce"
-                android:textColor="@android:color/black"
+                android:text="D"
+                android:textColor="@android:color/background_light"
                 android:textSize="30sp" />
 
             <Button
-                android:id="@+id/deli"
+                android:id="@+id/blood"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
-                android:background="@drawable/ic_steak"
+                android:background="@drawable/ic_blood_donation"
                 android:fontFamily="@font/aclonica"
                 android:onClick="onClick"
-                android:text="Deli"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/holo_red_dark"
                 android:textSize="36sp"
                 android:textStyle="bold" />
         </TableRow>
@@ -60,28 +56,58 @@
             android:layout_width="0dp"
 
             <Button
-                android:id="@+id/dairy"
+                android:id="@+id/vitamin_k"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
-                android:background="@drawable/ic_dairy"
+                android:background="@drawable/border_button"
                 android:fontFamily="@font/aclonica"
                 android:onClick="onClick"
-                android:text="Dairy"
-                android:textColor="@android:color/black"
+                android:text="K"
+                android:textColor="@android:color/background_light"
                 android:textSize="36sp" />
 
             <Button
-                android:id="@+id/market"
+                android:id="@+id/eye"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
-                android:background="@drawable/ic_chips"
+                android:background="@drawable/ic_eyeball"
                 android:fontFamily="@font/aclonica"
                 android:onClick="onClick"
-                android:text="Dry Goods"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow>
+            android:layout_width="0dp"
+
+            <Button
+                android:id="@+id/vitamin_a"
+                style="@style/AlertDialog.AppCompat"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:background="@drawable/border_button"
+                android:fontFamily="@font/aclonica"
+                android:onClick="onClick"
+                android:text="A"
+                android:textColor="@android:color/background_light"
+                android:textSize="36sp" />
+
+            <Button
+                android:id="@+id/lungs"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:background="@drawable/ic_lungs"
+                android:fontFamily="@font/aclonica"
+                android:onClick="onClick"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
                 android:textSize="30sp"
@@ -92,28 +118,27 @@
             android:layout_width="0dp"
 
             <Button
-                android:id="@+id/bakery"
+                android:id="@+id/vitamin_e"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
-                android:background="@drawable/ic_cake"
+                android:background="@drawable/border_button"
                 android:fontFamily="@font/aclonica"
                 android:onClick="onClick"
-                android:text="Bakery"
-                android:textColor="@android:color/black"
+                android:text="E"
+                android:textColor="@android:color/background_light"
                 android:textSize="36sp" />
 
             <Button
-                android:id="@+id/canned"
+                android:id="@+id/bone"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
-                android:background="@drawable/ic_canned_food"
+                android:background="@drawable/ic_bone"
                 android:fontFamily="@font/aclonica"
                 android:onClick="onClick"
-                android:text="Canned Goods"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
                 android:textSize="30sp"

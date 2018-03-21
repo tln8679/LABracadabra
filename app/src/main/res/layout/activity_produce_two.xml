@@ -28,7 +28,6 @@
             android:id="@+id/info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/banana"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="45dp"
             android:layout_centerHorizontal="true"
@@ -38,18 +37,20 @@
             android:textSize="30sp"
             android:textStyle="bold" />
 
-        <Button
+      <!--  <Button
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/diets"
             android:fontFamily="@font/aclonica"
-            android:text="NEXT"
+            android:text="@string/next"
             android:textColor="@android:color/holo_red_dark"
             android:textSize="18sp"
             android:onClick="onClick"
-            />
+            tools:ignore="UnusedAttribute"
+            android:layout_toEndOf="@+id/diets" />
+            -->
 
 
 
@@ -62,11 +63,12 @@
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:fontFamily="@font/aclonica"
-        android:text="Why do my parents always tell me to eat my fruits and Veggies?!?!"
+        android:text="@string/why_do_my_parents_always_tell_me_to_eat_my_fruits_and_veggies"
         android:textAlignment="center"
         android:textColor="@android:color/holo_orange_dark"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        tools:targetApi="jelly_bean" />
 
 
 

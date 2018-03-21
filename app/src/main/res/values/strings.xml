@@ -136,5 +136,10 @@
     <string name="hardware_store">Hardware Store</string>
     <string name="grocery_store">Grocery Store</string>
     <string name="which_is_not_like_the_other">Which is not like the other?</string>
+    <string name="next">NEXT</string>
+    <string name="why_do_my_parents_always_tell_me_to_eat_my_fruits_and_veggies">Why do my parents always tell me to eat my fruits and Veggies?!?!</string>
+    <string name="because_they_re_packed_with_vitamins">Because they\'re packed with vitamins!!</string>
+    <string name="fat_soluble_vitamins">Fat soluble vitamins:</string>
+    <string name="next2">next</string>
 
 </resources>

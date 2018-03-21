@@ -1,9 +1,11 @@
 package com.me.labracadabra;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
 
 public class MagiciansActivity extends AppCompatActivity {
 
@@ -11,6 +13,8 @@ public class MagiciansActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_magicians);
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.magic);
+        mp.start();
     }
 
     public void onClick(View v) {
