@@ -13,15 +13,15 @@ public class ProduceActivityTwo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_produce_two);
-        final MediaPlayer mp = MediaPlayer.create(this, R.raw.a2);
-        mp.start();
-        new Handler().postDelayed(new Runnable(){
-            @Override
-            public void run() {
-                Intent intent = new Intent(ProduceActivityTwo.this, ProduceActivityThree.class);
-                startActivity(intent);
-            }
-        }, mp.getDuration());
+//        final MediaPlayer mp = MediaPlayer.create(this, R.raw.a2);
+//        mp.start();
+//        new Handler().postDelayed(new Runnable(){
+//            @Override
+//            public void run() {
+//                Intent intent = new Intent(ProduceActivityTwo.this, ProduceActivityThree.class);
+//                startActivity(intent);
+//            }
+//        }, mp.getDuration());
     }
 
     public void onClick(View v){

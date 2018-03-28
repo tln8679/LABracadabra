@@ -15,10 +15,11 @@
         android:layout_height="match_parent"
 
         android:stretchColumns="*">
+
         <TextView
             android:layout_marginBottom="12dp"
             android:fontFamily="@font/aclonica"
-            android:text="Where are you located in the store?"
+            android:text="@string/where_are_you_located_in_the_store"
             android:textColor="@color/colorPrimary"
             android:textSize="32sp"
             android:textStyle="bold" />
@@ -37,9 +38,10 @@
                 android:background="@drawable/ic_fruit_icon_fruitsicon2"
                 android:fontFamily="@font/aclonica"
                 android:onClick="onClick"
-                android:text="Produce"
+                android:text="@string/produce"
                 android:textColor="@android:color/black"
-                android:textSize="30sp" />
+                android:textSize="36sp" />
+
 
             <Button
                 android:id="@+id/deli"
@@ -50,74 +52,299 @@
                 android:background="@drawable/ic_steak"
                 android:fontFamily="@font/aclonica"
                 android:onClick="onClick"
-                android:text="Deli"
+                android:text="@string/deli"
                 android:textColor="@android:color/black"
-                android:textSize="36sp"
-                android:textStyle="bold" />
+                android:textSize="36sp" />
         </TableRow>
 
-        <TableRow>
+        <TableRow android:layout_width="wrap_content">
+            android:layout_width="0dp"
+
+            <RelativeLayout>
+
+                <TextView
+                    android:id="@+id/produceScore"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/aclonica"
+                    android:onClick="onClick"
+                    android:text="@string/best"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/ps1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/produceScore"
+                    android:background="@drawable/ic_star" />
+
+                <ImageView
+                    android:id="@+id/ps2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/ps1"
+                    android:background="@drawable/ic_star" />
+
+                <ImageView
+                    android:id="@+id/ps3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/ps2"
+                    android:background="@drawable/ic_star" />
+            </RelativeLayout>
+
+            <RelativeLayout>
+
+                <TextView
+                    android:id="@+id/deliScore"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/aclonica"
+                    android:onClick="onClick"
+                    android:text="@string/best"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/dels1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/deliScore"
+                    android:background="@drawable/ic_star" />
+
+                <ImageView
+                    android:id="@+id/dels2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/dels1"
+                    android:background="@drawable/ic_star" />
+
+                <ImageView
+                    android:id="@+id/dels3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/dels2"
+                    android:background="@drawable/ic_star" />
+            </RelativeLayout>
+
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
             android:layout_width="0dp"
 
             <Button
                 android:id="@+id/dairy"
-                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:background="@drawable/ic_dairy"
                 android:fontFamily="@font/aclonica"
                 android:onClick="onClick"
-                android:text="Dairy"
+                android:text="@string/dairy"
                 android:textColor="@android:color/black"
                 android:textSize="36sp" />
 
             <Button
                 android:id="@+id/market"
-                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:background="@drawable/ic_chips"
                 android:fontFamily="@font/aclonica"
                 android:onClick="onClick"
-                android:text="Dry Goods"
-                android:textAlignment="center"
+                android:text="@string/dry_goods"
                 android:textColor="@android:color/black"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+                android:textSize="30sp" />
         </TableRow>
 
-        <TableRow>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+            android:layout_width="0dp"
+
+            <RelativeLayout>
+
+                <TextView
+                    android:id="@+id/dairyScore"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/aclonica"
+                    android:onClick="onClick"
+                    android:text="@string/best"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/ds1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/dairyScore"
+                    android:background="@drawable/ic_star" />
+
+                <ImageView
+                    android:id="@+id/ds2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/ds1"
+                    android:background="@drawable/ic_star" />
+
+                <ImageView
+                    android:id="@+id/ds3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/ds2"
+                    android:background="@drawable/ic_star" />
+            </RelativeLayout>
+
+            <RelativeLayout>
+
+                <TextView
+                    android:id="@+id/marketScore"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/aclonica"
+                    android:onClick="onClick"
+                    android:text="@string/best"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/ms1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/marketScore"
+                    android:background="@drawable/ic_star" />
+
+                <ImageView
+                    android:id="@+id/ms2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/ms1"
+                    android:background="@drawable/ic_star" />
+
+                <ImageView
+                    android:id="@+id/ms3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/ms2"
+                    android:background="@drawable/ic_star" />
+            </RelativeLayout>
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
             android:layout_width="0dp"
 
             <Button
                 android:id="@+id/bakery"
-                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:background="@drawable/ic_cake"
                 android:fontFamily="@font/aclonica"
                 android:onClick="onClick"
-                android:text="Bakery"
+                android:text="@string/bakery"
                 android:textColor="@android:color/black"
                 android:textSize="36sp" />
 
             <Button
                 android:id="@+id/canned"
-                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:background="@drawable/ic_canned_food"
                 android:fontFamily="@font/aclonica"
                 android:onClick="onClick"
-                android:text="Canned Goods"
-                android:textAlignment="center"
+                android:text="@string/canned_goods"
                 android:textColor="@android:color/black"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+                android:textSize="28sp" />
+        </TableRow>
+
+        <TableRow android:layout_width="wrap_content">
+            android:layout_width="0dp"
+
+            <RelativeLayout>
+
+                <TextView
+                    android:id="@+id/bakeryScore"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/aclonica"
+                    android:onClick="onClick"
+                    android:text="@string/best"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/bs1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/bakeryScore"
+                    android:background="@drawable/ic_star" />
+
+                <ImageView
+                    android:id="@+id/bs2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/bs1"
+                    android:background="@drawable/ic_star" />
+
+                <ImageView
+                    android:id="@+id/bs3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/bs2"
+                    android:background="@drawable/ic_star" />
+            </RelativeLayout>
+
+            <RelativeLayout>
+
+                <TextView
+                    android:id="@+id/cannedScore"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/aclonica"
+                    android:onClick="onClick"
+                    android:text="@string/best"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/cs1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/cannedScore"
+                    android:background="@drawable/ic_star" />
+
+                <ImageView
+                    android:id="@+id/cs2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/cs1"
+                    android:background="@drawable/ic_star" />
+
+                <ImageView
+                    android:id="@+id/cs3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/cs2"
+                    android:background="@drawable/ic_star" />
+            </RelativeLayout>
         </TableRow>
 
 

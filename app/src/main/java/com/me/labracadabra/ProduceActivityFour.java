@@ -21,8 +21,8 @@ public class ProduceActivityFour extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_produce_four);
-        final MediaPlayer mp = MediaPlayer.create(this, R.raw.a4);
-        mp.start();
+//        final MediaPlayer mp = MediaPlayer.create(this, R.raw.a4);
+//        mp.start();
         choices.add((Button) findViewById(R.id.vitamin_a));
         choices.add((Button) findViewById(R.id.vitamin_d));
         choices.add((Button) findViewById(R.id.vitamin_e));
@@ -94,8 +94,8 @@ public class ProduceActivityFour extends AppCompatActivity {
                     vita.setBackgroundColor(Color.GREEN);
                     count += 1;
                     a = true;
-                    MediaPlayer mp = MediaPlayer.create(this, R.raw.correct);
-                    mp.start();
+//                    MediaPlayer mp = MediaPlayer.create(this, R.raw.correct);
+//                    mp.start();
                     // Remove button from list, so it's color won't change again
                     for(int i =0; i <choices.size(); i++){
                         if(choices.get(i) == vita){
@@ -104,10 +104,11 @@ public class ProduceActivityFour extends AppCompatActivity {
                     }
                 }
                 else if(lc!=null) {
-                    MediaPlayer mp = MediaPlayer.create(this, R.raw.wrong);
-                    mp.start();
+//                    MediaPlayer mp = MediaPlayer.create(this, R.raw.wrong);
+//                    mp.start();
                     lc.setBackgroundColor(Color.RED);
                     eye.animate().rotationBy(900);
+                    ProduceActivity.score +=1;
                 }
                 // When all 4 are correct, start next screen
                 if (count == 4){
@@ -124,7 +125,7 @@ public class ProduceActivityFour extends AppCompatActivity {
                     count += 1;
                     d = true;
                     MediaPlayer mp = MediaPlayer.create(this, R.raw.correct);
-                    mp.start();
+//                    mp.start();
                     for(int i =0; i <choices.size(); i++){
                         if(choices.get(i) == vitd){
                             choices.remove(i);
@@ -132,10 +133,11 @@ public class ProduceActivityFour extends AppCompatActivity {
                     }
                 }
                 else if(lc!=null){
-                    MediaPlayer mp = MediaPlayer.create(this, R.raw.wrong);
-                    mp.start();
+//                    MediaPlayer mp = MediaPlayer.create(this, R.raw.wrong);
+//                    mp.start();
                     lc.setBackgroundColor(Color.RED);
                     bone.animate().rotationBy(900);
+                    ProduceActivity.score +=1;
                 }
                 if (count == 4){
                     Intent intent = new Intent(this, ProduceActivityFive.class);
@@ -149,8 +151,8 @@ public class ProduceActivityFour extends AppCompatActivity {
                 if (lc==vite && !e) {
                     vite.setBackgroundColor(Color.GREEN);
                     count += 1;
-                    MediaPlayer mp = MediaPlayer.create(this, R.raw.correct);
-                    mp.start();
+//                    MediaPlayer mp = MediaPlayer.create(this, R.raw.correct);
+//                    mp.start();
                     e = true;
                     for(int i =0; i <choices.size(); i++){
                         if(choices.get(i) == vite){
@@ -159,10 +161,11 @@ public class ProduceActivityFour extends AppCompatActivity {
                     }
                 }
                 else if(lc!=null){
-                    MediaPlayer mp = MediaPlayer.create(this, R.raw.wrong);
-                    mp.start();
+//                    MediaPlayer mp = MediaPlayer.create(this, R.raw.wrong);
+//                    mp.start();
                     lc.setBackgroundColor(Color.RED);
                     lungs.animate().rotationBy(900);
+                    ProduceActivity.score +=1;
                 }
                 if (count == 4){
                     Intent intent = new Intent(this, ProduceActivityFive.class);
@@ -176,8 +179,8 @@ public class ProduceActivityFour extends AppCompatActivity {
                 if (lc==vitk && !k) {
                     vitk.setBackgroundColor(Color.GREEN);
                     count += 1;
-                    MediaPlayer mp = MediaPlayer.create(this, R.raw.correct);
-                    mp.start();
+//                    MediaPlayer mp = MediaPlayer.create(this, R.raw.correct);
+//                    mp.start();
                     k = true;
                     for(int i =0; i <choices.size(); i++){
                         if(choices.get(i) == vitk){
@@ -186,10 +189,11 @@ public class ProduceActivityFour extends AppCompatActivity {
                     }
                 }
                 else if(lc!=null){
-                    MediaPlayer mp = MediaPlayer.create(this, R.raw.wrong);
-                    mp.start();
+//                    MediaPlayer mp = MediaPlayer.create(this, R.raw.wrong);
+//                    mp.start();
                     lc.setBackgroundColor(Color.RED);
                     blood.animate().rotationBy(900);
+                    ProduceActivity.score +=1;
                 }
                 if (count == 4){
                     Intent intent = new Intent(this, ProduceActivityFive.class);

@@ -18,21 +18,21 @@ public class ProduceActivityThree extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_produce_three);
-        final MediaPlayer mp = MediaPlayer.create(this, R.raw.a3);
-        mp.start();
-        new Handler().postDelayed(new Runnable(){
-            @Override
-            public void run() {
-                Button next = (Button)findViewById(R.id.next);
-                next.setOnClickListener(new View.OnClickListener() {
-                    public void onClick(View v) {
-                        // Perform action on click
-                        Intent intent = new Intent(ProduceActivityThree.this, ProduceActivityFour.class);
-                        startActivity(intent);
-                    }
-                });
-            }
-        }, mp.getDuration());
+//        final MediaPlayer mp = MediaPlayer.create(this, R.raw.a3);
+//        mp.start();
+//        new Handler().postDelayed(new Runnable(){
+//            @Override
+//            public void run() {
+//                Button next = (Button)findViewById(R.id.next);
+//                next.setOnClickListener(new View.OnClickListener() {
+//                    public void onClick(View v) {
+//                        // Perform action on click
+//                        Intent intent = new Intent(ProduceActivityThree.this, ProduceActivityFour.class);
+//                        startActivity(intent);
+//                    }
+//                });
+//            }
+//        }, mp.getDuration());
     }
 
     public void onClick(View view) {

@@ -14,8 +14,8 @@ public class GroceryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grocery);
-        final MediaPlayer mp = MediaPlayer.create(this, R.raw.grocery);
-        mp.start();
+//        final MediaPlayer mp = MediaPlayer.create(this, R.raw.grocery);
+//        mp.start();
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

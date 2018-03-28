@@ -13,8 +13,8 @@ public class Locations extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_locations);
-        final MediaPlayer mp = MediaPlayer.create(this, R.raw.loc);
-        mp.start();
+//        final MediaPlayer mp = MediaPlayer.create(this, R.raw.loc);
+//        mp.start();
     }
 
     public void onClick(View v) {

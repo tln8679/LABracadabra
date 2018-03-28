@@ -141,5 +141,14 @@
     <string name="because_they_re_packed_with_vitamins">Because they\'re packed with vitamins!!</string>
     <string name="fat_soluble_vitamins">Fat soluble vitamins:</string>
     <string name="next2">next</string>
+    <string name="where_are_you_located_in_the_store">Where are you located in the store?</string>
+    <string name="produce">Produce</string>
+    <string name="deli">Deli</string>
+    <string name="best">Best:</string>
+    <string name="dairy">Dairy</string>
+    <string name="dry_goods">Dry Goods</string>
+    <string name="bakery">Bakery</string>
+    <string name="canned_goods">Canned Goods</string>
+
 
 </resources>

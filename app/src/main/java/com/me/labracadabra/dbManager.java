@@ -15,8 +15,8 @@ import java.util.ArrayList;
 public class dbManager extends SQLiteOpenHelper {
     private static String DB_NAME = "TAYLOR'SDB";
     private static final int DB_VER = 1;
-    private static final String DB_TABLE = "Questions";
-    public static final String DB_COLUMN = "Answer";
+    private static final String DB_TABLE = "Progress";
+    public static final String DB_COLUMN = "Stars";
     public dbManager(Context context) {
         super(context, DB_NAME, null, DB_VER);
     }

@@ -1,5 +1,6 @@
 package com.me.labracadabra;
 
+import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -40,6 +41,7 @@ public class LandingScreen extends AppCompatActivity {
             @Override
             public void run() {
                 /* Create an Intent that will start the Menu-Activity. */
+
                 Intent MagicIntent = new Intent(LandingScreen.this,MagiciansActivity.class);
                 LandingScreen.this.startActivity(MagicIntent);
                 LandingScreen.this.finish();
