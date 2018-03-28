@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Labracadabra.iml" filepath="$PROJECT_DIR$/Labracadabra.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LABracadabra.iml" filepath="$PROJECT_DIR$/LABracadabra.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
