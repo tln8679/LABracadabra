@@ -10,13 +10,20 @@
     tools:context="com.me.labracadabra.GroceryActivity"
     tools:ignore="ExtraText">
 
+
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
         android:stretchColumns="*">
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/testDB"
+            android:text="blank"/>
 
         <TextView
+            android:id="@+id/test"
             android:layout_marginBottom="12dp"
             android:fontFamily="@font/aclonica"
             android:text="@string/where_are_you_located_in_the_store"
@@ -78,21 +85,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/produceScore"
-                    android:background="@drawable/ic_star" />
+                    android:background="@drawable/ic_emptystar" />
 
                 <ImageView
                     android:id="@+id/ps2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/ps1"
-                    android:background="@drawable/ic_star" />
+                    android:background="@drawable/ic_emptystar" />
 
                 <ImageView
                     android:id="@+id/ps3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/ps2"
-                    android:background="@drawable/ic_star" />
+                    android:background="@drawable/ic_emptystar" />
             </RelativeLayout>
 
             <RelativeLayout>
@@ -113,21 +120,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/deliScore"
-                    android:background="@drawable/ic_star" />
+                    android:background="@drawable/ic_emptystar" />
 
                 <ImageView
                     android:id="@+id/dels2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/dels1"
-                    android:background="@drawable/ic_star" />
+                    android:background="@drawable/ic_emptystar" />
 
                 <ImageView
                     android:id="@+id/dels3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/dels2"
-                    android:background="@drawable/ic_star" />
+                    android:background="@drawable/ic_emptystar" />
             </RelativeLayout>
 
         </TableRow>
@@ -188,21 +195,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/dairyScore"
-                    android:background="@drawable/ic_star" />
+                    android:background="@drawable/ic_emptystar" />
 
                 <ImageView
                     android:id="@+id/ds2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/ds1"
-                    android:background="@drawable/ic_star" />
+                    android:background="@drawable/ic_emptystar" />
 
                 <ImageView
                     android:id="@+id/ds3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/ds2"
-                    android:background="@drawable/ic_star" />
+                    android:background="@drawable/ic_emptystar" />
             </RelativeLayout>
 
             <RelativeLayout>
@@ -223,21 +230,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/marketScore"
-                    android:background="@drawable/ic_star" />
+                    android:background="@drawable/ic_emptystar" />
 
                 <ImageView
                     android:id="@+id/ms2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/ms1"
-                    android:background="@drawable/ic_star" />
+                    android:background="@drawable/ic_emptystar" />
 
                 <ImageView
                     android:id="@+id/ms3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/ms2"
-                    android:background="@drawable/ic_star" />
+                    android:background="@drawable/ic_emptystar" />
             </RelativeLayout>
         </TableRow>
 
@@ -294,21 +301,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/bakeryScore"
-                    android:background="@drawable/ic_star" />
+                    android:background="@drawable/ic_emptystar" />
 
                 <ImageView
                     android:id="@+id/bs2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/bs1"
-                    android:background="@drawable/ic_star" />
+                    android:background="@drawable/ic_emptystar" />
 
                 <ImageView
                     android:id="@+id/bs3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/bs2"
-                    android:background="@drawable/ic_star" />
+                    android:background="@drawable/ic_emptystar" />
             </RelativeLayout>
 
             <RelativeLayout>
@@ -329,21 +336,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/cannedScore"
-                    android:background="@drawable/ic_star" />
+                    android:background="@drawable/ic_emptystar" />
 
                 <ImageView
                     android:id="@+id/cs2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/cs1"
-                    android:background="@drawable/ic_star" />
+                    android:background="@drawable/ic_emptystar" />
 
                 <ImageView
                     android:id="@+id/cs3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/cs2"
-                    android:background="@drawable/ic_star" />
+                    android:background="@drawable/ic_emptystar" />
             </RelativeLayout>
         </TableRow>
 

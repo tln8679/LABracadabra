@@ -10,10 +10,14 @@ import com.amazonaws.mobileconnectors.pinpoint.PinpointManager;
 import com.amazonaws.mobileconnectors.pinpoint.PinpointConfiguration;
 import com.amazonaws.mobileconnectors.pinpoint.analytics.AnalyticsEvent;
 
+import java.util.HashMap;
+
 public class LandingScreen extends AppCompatActivity {
     public static PinpointManager pinpointManager;
     /** Duration of wait **/
-    private final int DISPLAY_LENGTH = 1250;
+    private final int DISPLAY_LENGTH = 2200;
+    private TextToSpeech reader;
+    private HashMap<String, String> onlineSpeech = new HashMap<>();
 
     /** Called when the activity is first created. */
     @Override
@@ -34,9 +38,26 @@ public class LandingScreen extends AppCompatActivity {
         pinpointManager.getAnalyticsClient().submitEvents();
 
         // Testing Custom Metrics
-        logEvent();
+        // logEvent();
 
         setContentView(R.layout.activity_landing_screen);
+        reader=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if(status != TextToSpeech.ERROR) {
+                    onlineSpeech.put(TextToSpeech.Engine.KEY_FEATURE_NETWORK_SYNTHESIS, "true");
+                    reader.setSpeechRate(.75f);
+                }
+            }
+        });
+        // wait a little for the initialization to complete
+        new Handler().postDelayed(new Runnable(){
+            @Override
+            public void run() {
+                sound();
+            }
+        }, 400);
+
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
@@ -47,6 +68,12 @@ public class LandingScreen extends AppCompatActivity {
                 LandingScreen.this.finish();
             }
         }, DISPLAY_LENGTH);
+    }
+
+    public void sound(){
+        String toSpeak = "Welcome to labracadabra!";
+        // Toast.makeText(getApplicationContext(), toSpeak,Toast.LENGTH_SHORT).show();
+        reader.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, onlineSpeech);
     }
 
     public void logEvent() {

@@ -9,11 +9,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import java.util.HashMap;
 import java.util.Locale;
 
 
 public class MagiciansActivity extends AppCompatActivity {
-    TextToSpeech t1;
+    public static String magican;
+    private TextToSpeech reader;
+    private HashMap<String, String> onlineSpeech = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,12 +24,13 @@ public class MagiciansActivity extends AppCompatActivity {
         setContentView(R.layout.activity_magicians);
 //        final MediaPlayer mp = MediaPlayer.create(this, R.raw.magic);
 //        mp.start();
-        t1=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+        reader=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
                 if(status != TextToSpeech.ERROR) {
-                    t1.setLanguage(Locale.US);
-                    t1.setPitch(.75f);
+                    onlineSpeech.put(TextToSpeech.Engine.KEY_FEATURE_NETWORK_SYNTHESIS, "true");
+                    reader.setSpeechRate(.75f);
+
                 }
             }
         });
@@ -42,9 +46,9 @@ public class MagiciansActivity extends AppCompatActivity {
     }
 
     public void sound(){
-        String toSpeak = "Please, choose a location!";
+        String toSpeak = "Please, choose a magician!";
         // Toast.makeText(getApplicationContext(), toSpeak,Toast.LENGTH_SHORT).show();
-        t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+        reader.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, onlineSpeech);
     }
 
     public void onClick(View v) {
@@ -53,6 +57,7 @@ public class MagiciansActivity extends AppCompatActivity {
             case R.id.mOne:
                 // Loads the screen for the Locations
                 // Needs to load the saved state for the first magician
+                magican = "magician1";
                 Intent locationsIntent = new Intent(this, Locations.class);
                 startActivity(locationsIntent);
                 break;
@@ -60,6 +65,7 @@ public class MagiciansActivity extends AppCompatActivity {
             case R.id.mTwo:
                 // Loads the screen for the Locations
                 // Needs to load the saved state for the second magician;
+                magican = "magician2";
                 Intent lIntent = new Intent(this, Locations.class);
                 startActivity(lIntent);
                 break;
@@ -67,6 +73,7 @@ public class MagiciansActivity extends AppCompatActivity {
             case R.id.mThree:
                 // Loads the screen for the Locations
                 // Needs to load the saved state for the third magician
+                magican = "magician3";
                 Intent lThreeIntent = new Intent(this, Locations.class);
                 startActivity(lThreeIntent);
                 break;
@@ -74,9 +81,9 @@ public class MagiciansActivity extends AppCompatActivity {
     }
 
     public void onPause(){
-        if(t1 !=null){
-            t1.stop();
-            t1.shutdown();
+        if(reader !=null){
+            reader.stop();
+            reader.shutdown();
         }
         super.onPause();
     }

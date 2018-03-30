@@ -6,71 +6,76 @@
     android:layout_height="fill_parent"
     android:orientation="vertical">
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
 
-        <Button
-            android:id="@+id/diets"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:layout_weight="1"
-            android:background="@drawable/ic_diet"
-            android:fontFamily="@font/aclonica"
-            android:textColor="@android:color/background_light"
-            android:textSize="30sp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
+            <TextView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:fontFamily="@font/aclonica"
+                android:text="@string/why_do_my_parents_always_tell_me_to_eat_my_fruits_and_veggies"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:targetApi="jelly_bean" />
 
-        <TextView
-            android:id="@+id/info"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="45dp"
-            android:layout_centerHorizontal="true"
-            android:fontFamily="@font/aclonica"
-            android:text="Because they're packed with vitamins!!"
-            android:textColor="@android:color/holo_orange_dark"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-
-      <!--  <Button
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/diets"
-            android:fontFamily="@font/aclonica"
-            android:text="@string/next"
-            android:textColor="@android:color/holo_red_dark"
-            android:textSize="18sp"
-            android:onClick="onClick"
-            tools:ignore="UnusedAttribute"
-            android:layout_toEndOf="@+id/diets" />
-            -->
+            <ImageView
+                android:id="@+id/diets"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@+id/imageView"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/ic_diet"
+                android:fontFamily="@font/aclonica"
+                android:textColor="@android:color/background_light"
+                tools:targetApi="jelly_bean" />
 
 
+            <TextView
+                android:id="@+id/info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/diets"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/aclonica"
+                android:text="Because they're packed with vitamins!!"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:targetApi="jelly_bean"
+                tools:ignore="HardcodedText"
+                android:textAlignment="center"/>
 
+            <Button
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/diets"
+                android:layout_toRightOf="@+id/diets"
+                android:fontFamily="@font/aclonica"
+                android:onClick="onClick"
+                android:text="@string/next"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="18sp"
+                tools:targetApi="jelly_bean" />
 
-    </RelativeLayout>
+        </RelativeLayout>
 
-    <TextView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:fontFamily="@font/aclonica"
-        android:text="@string/why_do_my_parents_always_tell_me_to_eat_my_fruits_and_veggies"
-        android:textAlignment="center"
-        android:textColor="@android:color/holo_orange_dark"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        tools:targetApi="jelly_bean" />
-
-
+    </ScrollView>
 
 
 </FrameLayout>

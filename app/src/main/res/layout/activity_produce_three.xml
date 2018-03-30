@@ -6,9 +6,13 @@
     android:layout_height="fill_parent"
     android:orientation="vertical">
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
         <TextView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
@@ -33,7 +37,8 @@
             android:text="@string/fat_soluble_vitamins"
             android:textColor="@android:color/holo_blue_dark"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            />
 
         <TextView
             android:id="@+id/vitamin_a"
@@ -44,7 +49,10 @@
             android:fontFamily="@font/aclonica"
             android:text="Vitamin A: Good for your eyes! Eat your carrots and fish!"
             android:textColor="@android:color/holo_blue_bright"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onClick"/>
 
         <TextView
             android:id="@+id/vitamin_d"
@@ -55,7 +63,10 @@
             android:fontFamily="@font/aclonica"
             android:text="Vitamin D: Good for your bones! Drink your milk and eat your cheese!"
             android:textColor="@android:color/holo_blue_bright"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onClick"/>
 
         <TextView
             android:id="@+id/vitamin_e"
@@ -66,7 +77,10 @@
             android:fontFamily="@font/aclonica"
             android:text="Vitamin E: Good for your Lungs! Eat your avocados, nuts and seeds!"
             android:textColor="@android:color/holo_blue_bright"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onClick"/>
 
         <TextView
             android:id="@+id/vitamin_k"
@@ -75,30 +89,32 @@
             android:layout_below="@+id/vitamin_e"
             android:layout_marginBottom="8dp"
             android:fontFamily="@font/aclonica"
-            android:text="Vitamin K: Good for your blood! Eat your spinach and cabbage!"
+            android:text="@string/vitamin_k_good_for_your_blood_eat_your_spinach_and_cabbage"
             android:textColor="@android:color/holo_blue_bright"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onClick"
+            tools:targetApi="jelly_bean" />
 
-       <Button
+        <Button
             android:id="@+id/next"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/diets"
+            android:layout_below="@+id/vitamin_k"
+            android:layout_marginBottom="8dp"
             android:fontFamily="@font/aclonica"
+            android:onClick="onClick"
             android:text="@string/next2"
             android:textColor="@android:color/holo_red_dark"
-            android:textSize="18sp"
-            android:onClick="onClick"
-            android:layout_alignParentBottom="true"
-            android:layout_toEndOf="@+id/diets" />
+            android:textSize="18sp" />
 
 
 
 
     </RelativeLayout>
-
+    </ScrollView>
 
 
 </FrameLayout>
