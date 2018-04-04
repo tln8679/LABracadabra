@@ -8,6 +8,7 @@ import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import java.util.HashMap;
 import java.util.Locale;
@@ -45,8 +46,17 @@ public class ProduceActivityTwo extends AppCompatActivity {
             @Override
             public void run() {
                 sound();
+                new Handler().postDelayed(new Runnable(){
+                    @Override
+                    // I don't want the next button to appear to early
+                    public void run() {
+                        Button next = (Button)findViewById(R.id.nxtbttn);
+                        next.setText("NEXT");
+                    }
+                }, 400);
             }
         }, 400);
+
     }
 
     public void sound(){
@@ -62,6 +72,7 @@ public class ProduceActivityTwo extends AppCompatActivity {
                 reader.speak("Because they're packed with vitamins!", TextToSpeech.QUEUE_FLUSH, onlineSpeech);
             }
         }, 150);
+
     }
 
 

@@ -10,7 +10,7 @@ import  android.content.ContentValues;
 import com.amazonaws.mobileconnectors.pinpoint.analytics.AnalyticsEvent;
 
 public class ProduceActivityFive extends AppCompatActivity {
-    dbManager scoreHelper = new dbManager(this);
+    dbManager scoreHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +18,10 @@ public class ProduceActivityFive extends AppCompatActivity {
         setContentView(R.layout.activity_produce_five);
         logEvent();
         score();
+        scoreHelper = new dbManager(this);
+        scoreHelper.deleteScore (MagiciansActivity.magican, GroceryActivity.activity);
+        scoreHelper.insertNewScore(MagiciansActivity.magican, ProduceActivity.score,
+                GroceryActivity.activity);
     }
 
     public void score() {
@@ -35,18 +39,6 @@ public class ProduceActivityFive extends AppCompatActivity {
         } else if (ProduceActivity.score < 20) {
             s3.setBackgroundResource(R.drawable.ic_star);
         }
-    // Gets the data repository in write mode
-        SQLiteDatabase db = scoreHelper.getWritableDatabase();
-
-    // Create a new map of values, where column names are the keys
-        ContentValues values = new ContentValues();
-        values.put(dbManager.COLUMN_NAME_MAGICIAN, MagiciansActivity.magican);
-        values.put(dbManager.COLUMN_NAME_SCORE, ProduceActivity.score);
-        values.put(dbManager.COLUMN_NAME_ACTIVITY, GroceryActivity.activity);
-
-
-    // Insert the new row, returning the primary key value of the new row
-        long newRowId = db.insert(dbManager.TABLE_NAME, null, values);
 
 
     }
@@ -80,11 +72,6 @@ public class ProduceActivityFive extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onDestroy(){
-        super.onDestroy();
-        scoreHelper.close();
-        super.onDestroy();
-    }
+
 
 }

@@ -8,9 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-
+import android.widget.Button;
 import java.util.HashMap;
-import java.util.Locale;
+
 
 public class ProduceActivityThree extends AppCompatActivity {
     private TextToSpeech reader;
@@ -72,6 +72,17 @@ public class ProduceActivityThree extends AppCompatActivity {
             reader.shutdown();
         }
         super.onPause();
+    }
+
+    // If all vitamins have been clicked, show the next button
+    public void checkStatus(){
+        for(int i = 0; i < clicked.length; i++) {
+            if (clicked[i] == false){break;}
+            else if (i == clicked.length-1 && clicked[i] == true){
+                Button nxt = (Button) findViewById(R.id.next);
+                nxt.setText("NEXT");
+            }
+        }
     }
 
     public void onClick(View v) {

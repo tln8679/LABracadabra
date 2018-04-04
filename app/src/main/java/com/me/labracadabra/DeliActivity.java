@@ -1,34 +1,25 @@
 package com.me.labracadabra;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Button;
+
 
 import java.util.HashMap;
 
-
-public class ProduceActivity extends AppCompatActivity {
-    // higher the number, means less stars
-    public static int score = 0;
+public class DeliActivity extends AppCompatActivity {
     private TextToSpeech reader;
     private HashMap<String, String> onlineSpeech = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_deli);
 
-
-        setContentView(R.layout.activity_produce);
-        // Instantiate audio
-//        final MediaPlayer mp = MediaPlayer.create(this, R.raw.a1);
-//        mp.start();
         reader = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
@@ -45,80 +36,67 @@ public class ProduceActivity extends AppCompatActivity {
                 sound();
             }
         }, 400);
-        score += 1;
+
     }
 
     public void sound() {
-        String toSpeak = "Which one is not like the other";
+        String toSpeak = "How many days a week should I eat yummy hamburgers and steak?";
         reader.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, onlineSpeech);
+
     }
 
+
     public void onPause() {
+        super.onPause();
         if (reader != null) {
             reader.stop();
             reader.shutdown();
         }
-        super.onPause();
+
     }
 
-
     public void onClick(View v) {
+        // Move to next question
         String toSpeak;
         int count;
         String update;
         switch (v.getId()) {
-            case R.id.banana:
+            case R.id.once:
                 // Wrong answer
-//                MediaPlayer mp = MediaPlayer.create(this, R.raw.wrong);
-//                mp.start();
                 toSpeak = "incorrect!";
                 reader.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, onlineSpeech);
                 // Keeping track of # of wrong answers
-                score += 1;
+                //score += 1;
                 break;
 
-            case R.id.orange:
+            case R.id.thrice:
                 // Wrong answer
-//                MediaPlayer mp2 = MediaPlayer.create(this, R.raw.wrong);
-//                mp2.start();
-                // Initializing reader
                 toSpeak = "incorrect!";
                 reader.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, onlineSpeech);
-
                 // Keeping track of # of wrong answers
-                score += 1;
+//                score += 1;
                 break;
 
-            case R.id.apples:
-                // Wrong answer
-//                MediaPlayer mp3 = MediaPlayer.create(this, R.raw.wrong);
-//                mp3.start();
-                // Initializing reader
-                toSpeak = "incorrect!";
-                reader.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, onlineSpeech);
-
-                // Keeping track of # of wrong answers
-                score += 1;
-                break;
-
-            case R.id.chicken:
-                // Move to next question
-//                MediaPlayer mp4 = MediaPlayer.create(this, R.raw.correct);
-//                mp4.start();
-                // We don't want the audio to play over
+            case R.id.twice:
                 toSpeak = "Correct!";
                 reader.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, onlineSpeech);
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        Intent intent = new Intent(ProduceActivity.this, ProduceActivityTwo.class);
-                        startActivity(intent);
-                    }
-                }, 700);
+                Button nxt = (Button) findViewById(R.id.nxtbttn);
+                nxt.setText("NEXT");
+                // Keeping track of # of wrong answers
+//                score += 1;
+                break;
+
+            case R.id.nxtbttn:
+                toSpeak = "Correct!";
+                reader.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, onlineSpeech);
+                Intent intent = new Intent(DeliActivity.this, DeliActivityTwo.class);
+                startActivity(intent);
                 break;
 
             default:
                 break;
+
+
         }
     }
 }

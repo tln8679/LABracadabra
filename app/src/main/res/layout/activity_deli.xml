@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:fontFamily="@font/aclonica"
+                android:text="How many days a week should I eat red meat?"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                tools:targetApi="jelly_bean"
+                android:layout_marginBottom="20dp"/>
+
+            <ImageView
+                android:id="@+id/steak"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_below="@+id/imageView"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/ic_steak"
+                android:fontFamily="@font/aclonica"
+                android:textColor="@android:color/background_light"
+                tools:targetApi="jelly_bean"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"/>
+
+
+
+            <TextView
+                android:id="@+id/once"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/steak"
+                android:layout_toLeftOf="@id/twice"
+                android:layout_marginRight="35dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/aclonica"
+                android:text="1x"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                tools:targetApi="jelly_bean"
+                tools:ignore="HardcodedText"
+                android:textAlignment="center"
+                android:onClick="onClick"/>
+
+            <TextView
+                android:id="@+id/twice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:layout_below="@+id/steak"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/aclonica"
+                android:text="2x"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                tools:targetApi="jelly_bean"
+                tools:ignore="HardcodedText"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/thrice"
+                android:layout_marginLeft="35dp"
+                android:layout_toRightOf="@id/twice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/steak"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/aclonica"
+                android:text="3x"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                tools:targetApi="jelly_bean"
+                tools:ignore="HardcodedText"
+                android:textAlignment="center"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/nxtbttn"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/twice"
+                android:fontFamily="@font/aclonica"
+                android:onClick="onClick"
+                android:text=""
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="22sp"
+                tools:targetApi="jelly_bean"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</FrameLayout>
+

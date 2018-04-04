@@ -149,10 +149,17 @@
     <string name="dry_goods">Dry Goods</string>
     <string name="bakery">Bakery</string>
     <string name="canned_goods">Canned Goods</string>
-    <string name="vitamin_k_good_for_your_blood_eat_your_spinach_and_cabbage">Vitamin K: Good for your blood! Eat your spinach and cabbage!</string>
+    <string name="vitamin_k_good_for_your_blood_eat_your_spinach_and_cabbage">Vitamin K (CLICK HERE): </string>
     <string name="_2x">2x</string>
     <string name="_1x">1x</string>
     <string name="_3x">3x</string>
+    <string name="vitamin_a">Vitamin A (CLICK HERE):</string>
+    <string name="vitamin_d_click_here">Vitamin D (CLICK HERE):</string>
+    <string name="let_s_learn_about_vitamins">Let\'s learn about vitamins!</string>
+    <string name="a_picture_of_milk">A picture of milk</string>
+    <string name="a_picture_of_a_bone">A picture of a bone</string>
+    <string name="picture_of_blood">Picture of blood</string>
+    <string name="picture_of_spinach">picture of spinach</string>
 
 
 </resources>
