@@ -27,7 +27,7 @@ import java.util.HashMap;
 public class DeliActivity extends AppCompatActivity {
     private TextToSpeech reader;
     private HashMap<String, String> onlineSpeech = new HashMap<>();
-    private final int SPEECH_INIT_TIME = 400;
+    protected final int SPEECH_INIT_TIME = 400;
     public final String CORRECT = "correct";
     public final String INCORRECT = "incorrect";
 
@@ -49,6 +49,7 @@ public class DeliActivity extends AppCompatActivity {
      * Purpose: Initialises the text to speech reader.
      * Important Note: Takes time after app launches to initialize, so I delay the speak function,
      *          so it will not occur before the reader is initialized.
+     * Called: Called onCreate to initialise the reader
      * Possible revisions: Professional reader v.s. Text synthesizer
      */
     public void initReader(){
@@ -77,6 +78,7 @@ public class DeliActivity extends AppCompatActivity {
      * Purpose: Calls the text readers speak method
      * Possible revision: Making a static string and passing it through the method may make this
      *          function more reusable
+     * Called: Called onCreate after text synthesizer is initialized
      */
     public void sound(String message) {
         reader.speak(message, TextToSpeech.QUEUE_FLUSH, onlineSpeech);

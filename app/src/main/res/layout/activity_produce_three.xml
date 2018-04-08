@@ -180,7 +180,7 @@
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/aclonica"
                 android:onClick="onClick"
-                android:text="@string/next2"
+                android:text=""
                 android:textColor="@android:color/holo_red_dark"
                 android:textSize="18sp" />
 

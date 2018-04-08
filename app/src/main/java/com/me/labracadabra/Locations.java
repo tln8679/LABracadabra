@@ -50,7 +50,7 @@ public class Locations extends AppCompatActivity {
      *      for initMessage.
      */
     public void initReader(){
-        final String initMessage = "How many days a week should I eat yummy hamburgers and steak?";
+        final String initMessage = "Choose your location";
         //  Creating a text2speech reader
         reader=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override

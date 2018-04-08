@@ -59,7 +59,7 @@ public class GroceryActivity extends AppCompatActivity {
      * Possible revisions: Professional reader v.s. Text synthesizer
      */
     public void initReader(){
-        final String initMessage = "How many days a week should I eat yummy hamburgers and steak?";
+        final String initMessage = "Find where you are in the store and tap it.";
         //  Creating a text2speech reader
         reader=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override

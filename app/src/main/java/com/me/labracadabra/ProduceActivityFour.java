@@ -12,61 +12,113 @@ import java.util.HashMap;
 import java.util.ArrayList;
 
 
+/**
+ * @author tln86
+ * Created by Taylor Noble on 2/26/2018.
+ * Filename: ProduceActivity.java
+ * Purpose: This program file controls the fourth produce activity. It is a learning module for kids
+ *          to learn about science in the prodcue aisle of a grocery store.
+ * Revised: 4/6/2018 - made code cleaner
+ * Data Structures: Uses a hash map for the TextToSpeech API. Strings and ints.
+ * Reason for existence: Contains all of the learning modules for the grocery store.
+ * Input: None
+ * Extensions/Revisions: Given more specific content from the clients, and feed back from a focus
+ *      group of children, better games could be created
+ */
 public class ProduceActivityFour extends AppCompatActivity {
     private TextToSpeech reader;
     private boolean a, d, e, k = false;
     private Button lc = null; // Stores last clicked button
     private int count = 0;
     private ArrayList<Button> choices = new ArrayList<>();
-    HashMap<String, String> onlineSpeech = new HashMap<>();
+    private HashMap<String, String> onlineSpeech = new HashMap<>();
+    protected final int SPEECH_INIT_TIME = 400;
+    public final String CORRECT = "correct";
+    public final String INCORRECT = "incorrect";
+
 
     @Override
+    /**
+     * Created by Taylor Noble on 2/24/2018.
+     * If there is data in the Bundle, the activity will restore to it's previous state
+     * Bundle is the default param for onCreate
+     * Revised: 4/7/2018 - Broke this down into multiple functions for readability
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_produce_four);
-//        final MediaPlayer mp = MediaPlayer.create(this, R.raw.a4);
-//        mp.start();
         choices.add((Button) findViewById(R.id.vitamin_a));
         choices.add((Button) findViewById(R.id.vitamin_d));
         choices.add((Button) findViewById(R.id.vitamin_e));
         choices.add((Button) findViewById(R.id.vitamin_k));
-        reader = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+        initReader();
+    }
+    /**
+     * Created by Taylor Noble on 4/3/2018.
+     * Purpose: Initialises the text to speech reader.
+     * Important Note: Takes time after app launches to initialize, so I delay the speak function,
+     *          so it will not occur before the reader is initialized.
+     * Possible revisions: Professional reader v.s. Text synthesizer
+     */
+    public void initReader(){
+        final String initMessage = "First tap a vitamin and then tap the body part that " +
+                "it is associated with.";
+        //  Creating a text2speech reader
+        reader=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
-                if (status != TextToSpeech.ERROR) {
+                if(status != TextToSpeech.ERROR) {
                     onlineSpeech.put(TextToSpeech.Engine.KEY_FEATURE_NETWORK_SYNTHESIS, "true");
                     reader.setSpeechRate(.75f);
-
                 }
             }
         });
         // wait a little for the initialization to complete
-        new Handler().postDelayed(new Runnable() {
+        new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
-                sound();
+                sound(initMessage);
             }
-        }, 400);
+        }, SPEECH_INIT_TIME);
     }
 
-    public void sound() {
-        String toSpeak = "First tap a vitamin and then tap the body part that it is associated with.";
-        // Toast.makeText(getApplicationContext(), toSpeak,Toast.LENGTH_SHORT).show();
-        reader.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, onlineSpeech);
+
+    /**
+     * Created by Taylor Noble on 4/7/2018.
+     * Purpose: Calls the text readers speak method
+     * Possible revision: Making a static string and passing it through the method may make this
+     *          function more reusable
+     */
+    public void sound(String message) {
+        reader.speak(message, TextToSpeech.QUEUE_FLUSH, onlineSpeech);
     }
 
+
+    /**
+     * Created by Taylor Noble on 4/6/2018.
+     * Purpose: If the screen is paused (app minimized, user launches next screen via some input
+     *          action, etc.), the reader needs to be killed.
+     * Output:  None
+     * Called: Called when priority is taken from the screen (new intent started, etc.)
+     */
     public void onPause() {
+        super.onPause();
         if (reader != null) {
             reader.stop();
             reader.shutdown();
         }
-        super.onPause();
     }
 
 
-
+    /**
+     * Created by Taylor Noble on 2/26/2018.
+     * @param v: the content view (resource layout xml file)
+     * Purpose: This method defines what happens when a button from the layout file is clicked
+     * Data Structures: ints and strings
+     * Possible revisions/extensions: none foreseen
+     * Called: When an object is clicked (finger tap)
+     */
     public void onClick (View v){
-        String toSpeak;
         switch (v.getId()) {
             case R.id.vitamin_a:
                 if (!a) {
@@ -126,14 +178,10 @@ public class ProduceActivityFour extends AppCompatActivity {
                 Button vita = (Button) findViewById(R.id.vitamin_a);
                 Button eye = (Button) findViewById(R.id.eye);
                 if (lc==vita && !a) {
-                    toSpeak = "Correct";
-                    reader.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, onlineSpeech);
+                    sound(CORRECT);
                     vita.setBackgroundColor(Color.GREEN);
                     count += 1;
                     a = true;
-//                    MediaPlayer mp = MediaPlayer.create(this, R.raw.correct);
-//                    mp.start();
-                    // Remove button from list, so it's color won't change again
                     for(int i =0; i <choices.size(); i++){
                         if(choices.get(i) == vita){
                             choices.remove(i);
@@ -141,13 +189,10 @@ public class ProduceActivityFour extends AppCompatActivity {
                     }
                 }
                 else if(lc!=null) {
-                    toSpeak = "incorrect!";
-                    reader.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, onlineSpeech);
-//                    MediaPlayer mp = MediaPlayer.create(this, R.raw.wrong);
-//                    mp.start();
+                    sound(INCORRECT);
                     lc.setBackgroundColor(Color.RED);
                     eye.animate().rotationBy(900);
-                    ProduceActivity.score +=1;
+                    ProduceActivity.incrementScore();
                 }
                 // When all 4 are correct, start next screen
                 if (count == 4){
@@ -160,13 +205,10 @@ public class ProduceActivityFour extends AppCompatActivity {
                 Button vitd = (Button) findViewById(R.id.vitamin_d);
                 Button bone = (Button) findViewById(R.id.bone);
                 if (lc==vitd && !d) {
-                    toSpeak = "Correct";
-                    reader.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, onlineSpeech);
+                    sound(CORRECT);
                     vitd.setBackgroundColor(Color.GREEN);
                     count += 1;
                     d = true;
-//                    MediaPlayer mp = MediaPlayer.create(this, R.raw.correct);
-//                    mp.start();
                     for(int i =0; i <choices.size(); i++){
                         if(choices.get(i) == vitd){
                             choices.remove(i);
@@ -174,13 +216,10 @@ public class ProduceActivityFour extends AppCompatActivity {
                     }
                 }
                 else if(lc!=null){
-                    toSpeak = "incorrect!";
-                    reader.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, onlineSpeech);
-//                    MediaPlayer mp = MediaPlayer.create(this, R.raw.wrong);
-//                    mp.start();
+                    sound(INCORRECT);
                     lc.setBackgroundColor(Color.RED);
                     bone.animate().rotationBy(900);
-                    ProduceActivity.score +=1;
+                    ProduceActivity.incrementScore();
                 }
                 if (count == 4){
                     Intent intent = new Intent(this, ProduceActivityFive.class);
@@ -192,12 +231,9 @@ public class ProduceActivityFour extends AppCompatActivity {
                 Button vite = (Button) findViewById(R.id.vitamin_e);
                 Button lungs = (Button) findViewById(R.id.lungs);
                 if (lc==vite && !e) {
-                    toSpeak = "Correct";
-                    reader.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, onlineSpeech);
+                    sound(CORRECT);
                     vite.setBackgroundColor(Color.GREEN);
                     count += 1;
-//                    MediaPlayer mp = MediaPlayer.create(this, R.raw.correct);
-//                    mp.start();
                     e = true;
                     for(int i =0; i <choices.size(); i++){
                         if(choices.get(i) == vite){
@@ -206,13 +242,10 @@ public class ProduceActivityFour extends AppCompatActivity {
                     }
                 }
                 else if(lc!=null){
-                    toSpeak = "incorrect!";
-                    reader.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, onlineSpeech);
-//                    MediaPlayer mp = MediaPlayer.create(this, R.raw.wrong);
-//                    mp.start();
+                    sound(INCORRECT);
                     lc.setBackgroundColor(Color.RED);
                     lungs.animate().rotationBy(900);
-                    ProduceActivity.score +=1;
+                    ProduceActivity.incrementScore();
                 }
                 if (count == 4){
                     Intent intent = new Intent(this, ProduceActivityFive.class);
@@ -224,12 +257,9 @@ public class ProduceActivityFour extends AppCompatActivity {
                 Button vitk = (Button) findViewById(R.id.vitamin_k);
                 Button blood = (Button) findViewById(R.id.blood);
                 if (lc==vitk && !k) {
-                    toSpeak = "Correct";
-                    reader.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, onlineSpeech);
+                    sound(CORRECT);
                     vitk.setBackgroundColor(Color.GREEN);
                     count += 1;
-//                    MediaPlayer mp = MediaPlayer.create(this, R.raw.correct);
-//                    mp.start();
                     k = true;
                     for(int i =0; i <choices.size(); i++){
                         if(choices.get(i) == vitk){
@@ -238,13 +268,10 @@ public class ProduceActivityFour extends AppCompatActivity {
                     }
                 }
                 else if(lc!=null){
-                    toSpeak = "incorrect!";
-                    reader.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, onlineSpeech);
-//                    MediaPlayer mp = MediaPlayer.create(this, R.raw.wrong);
-//                    mp.start();
+                    sound(CORRECT);
                     lc.setBackgroundColor(Color.RED);
                     blood.animate().rotationBy(900);
-                    ProduceActivity.score +=1;
+                    ProduceActivity.incrementScore();
                 }
                 if (count == 4){
                     Intent intent = new Intent(this, ProduceActivityFive.class);
