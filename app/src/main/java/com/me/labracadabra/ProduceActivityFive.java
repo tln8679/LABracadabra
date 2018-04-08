@@ -5,12 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.database.sqlite.SQLiteDatabase;
-import  android.content.ContentValues;
+
 import com.amazonaws.mobileconnectors.pinpoint.analytics.AnalyticsEvent;
 
 public class ProduceActivityFive extends AppCompatActivity {
-    dbManager scoreHelper;
+    private dbManager scoreHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,9 +18,9 @@ public class ProduceActivityFive extends AppCompatActivity {
         logEvent();
         score();
         scoreHelper = new dbManager(this);
-        scoreHelper.deleteScore (MagiciansActivity.magican, GroceryActivity.activity);
-        scoreHelper.insertNewScore(MagiciansActivity.magican, ProduceActivity.score,
-                GroceryActivity.activity);
+        scoreHelper.deleteScore (MagiciansActivity.getMagician(), GroceryActivity.getActivity());
+        scoreHelper.insertNewScore(MagiciansActivity.getMagician(), ProduceActivity.score,
+                GroceryActivity.getActivity());
     }
 
     public void score() {
