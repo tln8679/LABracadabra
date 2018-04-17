@@ -25,7 +25,7 @@ import java.util.*;
  *      group of children, a better list of modules could be made
  */
 public class GroceryActivity extends AppCompatActivity {
-    private Intent intent;
+    protected Intent intent;
     private static String activity;
     public static String getActivity() {   //   Needed for database
         return activity;
@@ -33,16 +33,16 @@ public class GroceryActivity extends AppCompatActivity {
     private TextToSpeech reader;
     private HashMap<String, String> onlineSpeech = new HashMap<>();
     private dbManager dbHelper;
-    private final int SPEECH_INIT_TIME = 400;
 
 
-    @Override
+
     /**
      * Created by Taylor Noble on 2/24/2018.
      * If there is data in the Bundle, the activity will restore to it's previous state
      * Bundle is the default param for onCreate
      * Revised: 4/7/2018 - Broke this down into multiple functions for readability
      */
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grocery);
@@ -71,6 +71,7 @@ public class GroceryActivity extends AppCompatActivity {
             }
         });
         //  Wait a little for the initialization to complete
+        int SPEECH_INIT_TIME = 400;
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
@@ -104,38 +105,63 @@ public class GroceryActivity extends AppCompatActivity {
         int OKAY = 8;
         int BAD = 20;
 
+
+
+        // Produce progress
         //   Get player's stars from db to display
-        ArrayList<String> scores = dbHelper.getBestScore(MagiciansActivity.getMagician());
-        String bestScore;
+        ArrayList<String> scores = dbHelper.getBestScore(MagiciansActivity.getMagician(), "produce");
+        String bestProduceScore;
         if (scores.size()>0) {
-            bestScore = scores.get(0);
+            bestProduceScore = scores.get(0);
         } else {
-            bestScore = "0";    //  If not played yet, there are 0 clicks. Display 0 stars.
+            bestProduceScore = "0";    //  If not played yet, there are 0 clicks. Display 0 stars.
         }
 
         ImageView ps1 = (ImageView) findViewById(R.id.ps1);
         ImageView ps2 = (ImageView) findViewById(R.id.ps2);
         ImageView ps3 = (ImageView) findViewById(R.id.ps3);
-        if (Integer.parseInt(bestScore) < GOOD && Integer.parseInt(bestScore) != NOT_PLAYED) {
+        if (Integer.parseInt(bestProduceScore) < GOOD && Integer.parseInt(bestProduceScore) != NOT_PLAYED) {
             ps1.setBackgroundResource(R.drawable.ic_star);
             ps2.setBackgroundResource(R.drawable.ic_star);
             ps3.setBackgroundResource(R.drawable.ic_star);
-        } else if (Integer.parseInt(bestScore) >= GOOD && Integer.parseInt(bestScore) < OKAY) {
+        } else if (Integer.parseInt(bestProduceScore) >= GOOD && Integer.parseInt(bestProduceScore) < OKAY) {
             ps2.setBackgroundResource(R.drawable.ic_star);
             ps3.setBackgroundResource(R.drawable.ic_star);
-        } else if (Integer.parseInt(bestScore) < BAD && Integer.parseInt(bestScore) > OKAY) {
+        } else if (Integer.parseInt(bestProduceScore) < BAD && Integer.parseInt(bestProduceScore) > OKAY) {
+            ps3.setBackgroundResource(R.drawable.ic_star);
+        }
+
+        // Deli progress
+        //   Get player's stars from db to display
+        scores = dbHelper.getBestScore(MagiciansActivity.getMagician(), "produce");
+        String bestDeliScore;
+        if (scores.size()>0) {
+            bestDeliScore = scores.get(0);
+        } else {
+            bestDeliScore = "0";    //  If not played yet, there are 0 clicks. Display 0 stars.
+        }
+        ImageView ds1 = (ImageView) findViewById(R.id.dels1);
+        ImageView ds2 = (ImageView) findViewById(R.id.dels2);
+        ImageView ds3 = (ImageView) findViewById(R.id.dels3);
+        if (Integer.parseInt(bestDeliScore) < GOOD && Integer.parseInt(bestDeliScore) != NOT_PLAYED) {
+            ps1.setBackgroundResource(R.drawable.ic_star);
+            ps2.setBackgroundResource(R.drawable.ic_star);
+            ps3.setBackgroundResource(R.drawable.ic_star);
+        } else if (Integer.parseInt(bestDeliScore) >= GOOD && Integer.parseInt(bestDeliScore) < OKAY) {
+            ps2.setBackgroundResource(R.drawable.ic_star);
+            ps3.setBackgroundResource(R.drawable.ic_star);
+        } else if (Integer.parseInt(bestDeliScore) < BAD && Integer.parseInt(bestDeliScore) > OKAY) {
             ps3.setBackgroundResource(R.drawable.ic_star);
         }
     }
 
-
-    @Override
     /**
      * Created by Taylor Noble on 4/6/2018.
      * Purpose: If the screen is paused (app minimized, user launches next screen via some input
      *          action, etc.), the reader needs to be killed.
      * Output:  None
      */
+    @Override
     public void onPause() {
         super.onPause();
         if (reader != null) {
@@ -144,12 +170,12 @@ public class GroceryActivity extends AppCompatActivity {
         }
     }
 
-    @Override
     /**
      * Created by Taylor Noble on 4/6/2018.
      * Purpose: If the app is killed, the reader needs to be killed.
      * Output:  None
      */
+    @Override
     public void onDestroy() {
         super.onDestroy();
         if (reader != null) {
@@ -183,44 +209,18 @@ public class GroceryActivity extends AppCompatActivity {
                 intent = new Intent(this, DeliActivity.class);
                 startActivity(intent);
                 break;
-
-            /**case R.id.dairy:
-             // Loads the screen for the protein information
-             Intent proIntent = new Intent(this, ProteinActivity.class);
-             startActivity(proIntent);
-             break;
-
-             case R.id.market:
-             // Loads the screen for the protein information
-             Intent carbsIntent = new Intent(this, CarbsActivity.class);
-             startActivity(carbsIntent);
-             break;
-
-             case R.id.canned:
-             // Loads the screen for the dairy information
-             Intent dairyIntent = new Intent(this, DairyActivity.class);
-             startActivity(dairyIntent);
-             break;
-
-             case R.id.bakery:
-             // Loads the screen for the fats information
-             Intent fatsIntent = new Intent(this, CarbsActivity.class);
-             startActivity(fatsIntent);
-             break;
-             /**
-             case R.id.buttonVitamins:
-             // Loads the screen for the vitamins information
-             Intent vitaminsIntent = new Intent(this, VitaminActivity.class);
-             startActivity(vitaminsIntent);
-             break;
-
-             case R.id.buttonFiber:
-             // Loads the screen for the fiber information
-             Intent fiberIntent = new Intent(this, FiberActivity.class);
-             startActivity(fiberIntent);
-             break;
-             */
-
+//
+//            case R.id.dairy:
+//             // Loads the screen for the protein information
+//             Intent proIntent = new Intent(this, ProteinActivity.class);
+//             startActivity(proIntent);
+//             break;
+//
+//             case R.id.bakery:
+//             // Loads the screen for the fats information
+//             Intent fatsIntent = new Intent(this, CarbsActivity.class);
+//             startActivity(fatsIntent);
+//             break;
 
             default:
                 break;

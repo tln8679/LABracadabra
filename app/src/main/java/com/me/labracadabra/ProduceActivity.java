@@ -6,7 +6,6 @@ import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-
 import java.util.HashMap;
 
 /**
@@ -48,7 +47,6 @@ public class ProduceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_produce);
         initReader();
-        score += 1;
     }
 
     /**

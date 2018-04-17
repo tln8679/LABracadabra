@@ -14,7 +14,6 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         android:stretchColumns="*">
 
 
@@ -155,14 +154,14 @@
                 android:textSize="36sp" />
 
             <Button
-                android:id="@+id/market"
+                android:id="@+id/bakery"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
-                android:background="@drawable/ic_chips"
+                android:background="@drawable/ic_cake"
                 android:fontFamily="@font/aclonica"
                 android:onClick="onClick"
-                android:text="@string/dry_goods"
+                android:text="@string/bakery"
                 android:textColor="@android:color/black"
                 android:textSize="30sp" />
         </TableRow>
@@ -244,7 +243,6 @@
             </RelativeLayout>
         </TableRow>
 
-
         <TableRow
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -252,103 +250,123 @@
             android:layout_width="0dp"
 
             <Button
-                android:id="@+id/bakery"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_weight="1"
-                android:background="@drawable/ic_cake"
-                android:fontFamily="@font/aclonica"
-                android:onClick="onClick"
-                android:text="@string/bakery"
-                android:textColor="@android:color/black"
-                android:textSize="36sp" />
+                android:layout_width="match_parent"
+                android:height="@dimen/activity_horizontal_margin"
+                android:background="@drawable/selected_button"
+                android:text="Back" />
 
             <Button
-                android:id="@+id/canned"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_weight="1"
-                android:background="@drawable/ic_canned_food"
-                android:fontFamily="@font/aclonica"
-                android:onClick="onClick"
-                android:text="@string/canned_goods"
-                android:textColor="@android:color/black"
-                android:textSize="28sp" />
+                android:layout_width="match_parent"
+                android:height="@dimen/activity_horizontal_margin"
+                android:background="@drawable/selected_button"
+                android:text="Image Credits" />
         </TableRow>
 
-        <TableRow android:layout_width="wrap_content">
-            android:layout_width="0dp"
 
-            <RelativeLayout>
+        <!--<TableRow-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center">-->
+        <!--android:layout_width="0dp"-->
 
-                <TextView
-                    android:id="@+id/bakeryScore"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/aclonica"
-                    android:onClick="onClick"
-                    android:text="@string/best"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp" />
+        <!--<Button-->
+        <!--android:id="@+id/bakery"-->
+        <!--android:layout_width="150dp"-->
+        <!--android:layout_height="150dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="@drawable/ic_cake"-->
+        <!--android:fontFamily="@font/aclonica"-->
+        <!--android:onClick="onClick"-->
+        <!--android:text="@string/bakery"-->
+        <!--android:textColor="@android:color/black"-->
+        <!--android:textSize="36sp" />-->
 
-                <ImageView
-                    android:id="@+id/bs1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/bakeryScore"
-                    android:background="@drawable/ic_emptystar" />
+        <!--<Button-->
+        <!--android:id="@+id/canned"-->
+        <!--android:layout_width="150dp"-->
+        <!--android:layout_height="150dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="@drawable/ic_canned_food"-->
+        <!--android:fontFamily="@font/aclonica"-->
+        <!--android:onClick="onClick"-->
+        <!--android:text="@string/canned_goods"-->
+        <!--android:textColor="@android:color/black"-->
+        <!--android:textSize="28sp" />-->
+        <!--</TableRow>-->
 
-                <ImageView
-                    android:id="@+id/bs2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/bs1"
-                    android:background="@drawable/ic_emptystar" />
+        <!--<TableRow android:layout_width="wrap_content">-->
+        <!--android:layout_width="0dp"-->
 
-                <ImageView
-                    android:id="@+id/bs3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/bs2"
-                    android:background="@drawable/ic_emptystar" />
-            </RelativeLayout>
+        <!--<RelativeLayout>-->
 
-            <RelativeLayout>
+        <!--<TextView-->
+        <!--android:id="@+id/bakeryScore"-->
+        <!--android:layout_width="50dp"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:fontFamily="@font/aclonica"-->
+        <!--android:onClick="onClick"-->
+        <!--android:text="@string/best"-->
+        <!--android:textColor="@android:color/black"-->
+        <!--android:textSize="16sp" />-->
 
-                <TextView
-                    android:id="@+id/cannedScore"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/aclonica"
-                    android:onClick="onClick"
-                    android:text="@string/best"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp" />
+        <!--<ImageView-->
+        <!--android:id="@+id/bs1"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_toRightOf="@id/bakeryScore"-->
+        <!--android:background="@drawable/ic_emptystar" />-->
 
-                <ImageView
-                    android:id="@+id/cs1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/cannedScore"
-                    android:background="@drawable/ic_emptystar" />
+        <!--<ImageView-->
+        <!--android:id="@+id/bs2"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_toRightOf="@id/bs1"-->
+        <!--android:background="@drawable/ic_emptystar" />-->
 
-                <ImageView
-                    android:id="@+id/cs2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/cs1"
-                    android:background="@drawable/ic_emptystar" />
+        <!--<ImageView-->
+        <!--android:id="@+id/bs3"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_toRightOf="@id/bs2"-->
+        <!--android:background="@drawable/ic_emptystar" />-->
+        <!--</RelativeLayout>-->
 
-                <ImageView
-                    android:id="@+id/cs3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/cs2"
-                    android:background="@drawable/ic_emptystar" />
-            </RelativeLayout>
-        </TableRow>
+        <!--<RelativeLayout>-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/cannedScore"-->
+        <!--android:layout_width="50dp"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:fontFamily="@font/aclonica"-->
+        <!--android:onClick="onClick"-->
+        <!--android:text="@string/best"-->
+        <!--android:textColor="@android:color/black"-->
+        <!--android:textSize="16sp" />-->
+
+        <!--<ImageView-->
+        <!--android:id="@+id/cs1"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_toRightOf="@id/cannedScore"-->
+        <!--android:background="@drawable/ic_emptystar" />-->
+
+        <!--<ImageView-->
+        <!--android:id="@+id/cs2"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_toRightOf="@id/cs1"-->
+        <!--android:background="@drawable/ic_emptystar" />-->
+
+        <!--<ImageView-->
+        <!--android:id="@+id/cs3"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_toRightOf="@id/cs2"-->
+        <!--android:background="@drawable/ic_emptystar" />-->
+        <!--</RelativeLayout>-->
+        <!--</TableRow>-->
 
 
         <!-- </ScrollView>-->

@@ -160,6 +160,9 @@
     <string name="a_picture_of_a_bone">A picture of a bone</string>
     <string name="picture_of_blood">Picture of blood</string>
     <string name="picture_of_spinach">picture of spinach</string>
+    <string name="tap_the_food_that_will_make_your_muscles_bigger">Tap the food that will make your muscles bigger</string>
+    <string name="arms">Arms</string>
+    <string name="food_choice">food choice</string>
 
 
 </resources>

@@ -25,6 +25,12 @@ import java.util.HashMap;
  *      group of children, better indirect learning games could be made
  */
 public class DeliActivity extends AppCompatActivity {
+    // higher the number, means less stars
+    private static int score = 0;
+    public static int getScore() {
+        return score;
+    }
+    public static void incrementScore(){score+=1;}
     private TextToSpeech reader;
     private HashMap<String, String> onlineSpeech = new HashMap<>();
     protected final int SPEECH_INIT_TIME = 400;
@@ -114,27 +120,19 @@ public class DeliActivity extends AppCompatActivity {
                 // Wrong answer
                 sound(INCORRECT);
                 // Keeping track of # of wrong answers
-                //score += 1;
+                score += 1;
                 break;
 
             case R.id.thrice:
                 // Wrong answer
                 sound(INCORRECT);
                 // Keeping track of # of wrong answers
-//                score += 1;
+                score += 1;
                 break;
 
             case R.id.twice:
                 //  Right answer
                 sound(CORRECT);
-                Button nxt = (Button) findViewById(R.id.nxtbttn);
-                nxt.setText("NEXT");
-                // Keeping track of # of wrong answers
-//                score += 1;
-                break;
-
-            case R.id.nxtbttn:
-                sound(INCORRECT);
                 Intent intent = new Intent(DeliActivity.this, DeliActivityTwo.class);
                 startActivity(intent);
                 break;

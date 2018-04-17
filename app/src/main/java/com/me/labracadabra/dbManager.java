@@ -119,7 +119,7 @@ public class dbManager extends SQLiteOpenHelper implements BaseColumns {
      * Called when a locations screen is launched (grocery store, hardware store, etc.)
      * Updates the best score for each game/learning module
      */
-    public ArrayList<String> getBestScore(String savedState){
+    public ArrayList<String> getBestScore(String savedState, String activity){
         // Define a projection that specifies which columns from the database
         // you will actually use after this query.
         ArrayList<String> items = new ArrayList<>();
@@ -132,8 +132,9 @@ public class dbManager extends SQLiteOpenHelper implements BaseColumns {
         };
 
         // Filter results WHERE "title" = 'My Title'
-        String selection = dbManager.COLUMN_NAME_MAGICIAN + " = ?";
-        String[] selectionArgs = { savedState };
+        String selection = dbManager.COLUMN_NAME_MAGICIAN + " = ? AND " +
+                dbManager.COLUMN_NAME_ACTIVITY + " = ?";
+        String[] selectionArgs = { savedState, activity };
 
         // How you want the results sorted in the resulting Cursor
         String sortOrder =

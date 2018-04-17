@@ -100,20 +100,15 @@
                 android:textAlignment="center"
                 android:onClick="onClick"/>
 
-            <Button
-                android:id="@+id/nxtbttn"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <ProgressBar
+                android:id="@+id/Bar"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:layout_below="@id/thrice"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@+id/twice"
-                android:fontFamily="@font/aclonica"
-                android:onClick="onClick"
-                android:text=""
-                android:textColor="@android:color/holo_red_dark"
-                android:textSize="22sp"
-                tools:targetApi="jelly_bean"
-                android:layout_alignParentBottom="true"/>
+                android:layout_marginTop="80dp"
+                android:progress="5" />
 
         </RelativeLayout>
 

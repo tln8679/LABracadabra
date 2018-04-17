@@ -37,13 +37,13 @@ public class ProduceActivityFour extends AppCompatActivity {
     public final String INCORRECT = "incorrect";
 
 
-    @Override
     /**
      * Created by Taylor Noble on 2/24/2018.
      * If there is data in the Bundle, the activity will restore to it's previous state
      * Bundle is the default param for onCreate
      * Revised: 4/7/2018 - Broke this down into multiple functions for readability
      */
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_produce_four);
