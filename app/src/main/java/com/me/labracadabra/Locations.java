@@ -24,16 +24,16 @@ import java.util.HashMap;
 public class Locations extends AppCompatActivity {
     private TextToSpeech reader;
     private HashMap<String, String> onlineSpeech = new HashMap<>();
-    private final int SPEECH_INIT_TIME = 400;
+    private Intent intent;
 
 
-    @Override
     /**
      * Created by Taylor Noble on 2/20/2018.
      * If there is data in the Bundle, the activity will restore to it's previous state
      * Bundle is the default param for onCreate
      * Revised: 4/7/2018 - Broke this down into multiple functions for readability
      */
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_locations);
@@ -62,6 +62,7 @@ public class Locations extends AppCompatActivity {
             }
         });
         //  Wait a little for the initialization to complete
+        int SPEECH_INIT_TIME = 400;
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
@@ -113,16 +114,39 @@ public class Locations extends AppCompatActivity {
                 break;
 
             case R.id.hardware:
-                // Loads the screen for the hardware store
+                intent = new Intent(this, UnderConstruction.class);
+                startActivity(intent);
                 break;
 
             case R.id.library:
-                // Loads the screen for the library
+                intent = new Intent(this, UnderConstruction.class);
+                startActivity(intent);
                 break;
 
             case R.id.park:
-                // Loads the screen for the park
+                intent = new Intent(this, UnderConstruction.class);
+                startActivity(intent);
+                break;
+
+            case R.id.auto:
+                intent = new Intent(this, UnderConstruction.class);
+                startActivity(intent);
+                break;
+
+            case R.id.doctors:
+                intent = new Intent(this, UnderConstruction.class);
+                startActivity(intent);
+                break;
+
+            default:
                 break;
         }
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent intent = new Intent(this, MagiciansActivity.class);
+        startActivity(intent);
     }
 }

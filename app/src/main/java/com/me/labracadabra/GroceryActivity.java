@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
+
 import java.util.HashMap;
 import java.util.*;
 
@@ -50,6 +52,29 @@ public class GroceryActivity extends AppCompatActivity {
         dbHelper = new dbManager(this);
         loadScores();   //  Load the stars for best scores
     }
+
+    /**
+     * Created by Taylor Noble on 4/20/2018.
+     * Purpose: Opens a web page. We will use to open our credits page.
+     * Input: A url that we want to open
+     * Possible revisions: None
+     */
+    private void goToUrl (String url) {
+        Intent intent = new Intent(this, WebViewActivity.class);
+        intent.putExtra("url", url);
+        startActivity(intent);
+    }
+
+    /**
+     * Created by Taylor Noble on 4/20/2018.
+     * Purpose: Opens a web page. We will use to open our credits page.
+     * Input: A View (see goToURL)
+     * Possible revisions: None
+     */
+    public void goToSite (View view) {
+        goToUrl ( "http://labracadabra.org");
+    }
+
 
     /**
      * Created by Taylor Noble on 4/3/2018.
@@ -101,7 +126,7 @@ public class GroceryActivity extends AppCompatActivity {
      */
     private void loadScores() {
         int GOOD = 3;   // these following numbers represent number of incorrect clicks
-        int NOT_PLAYED = 0;
+        int NOT_PLAYED = -1;
         int OKAY = 8;
         int BAD = 20;
 
@@ -114,13 +139,17 @@ public class GroceryActivity extends AppCompatActivity {
         if (scores.size()>0) {
             bestProduceScore = scores.get(0);
         } else {
-            bestProduceScore = "0";    //  If not played yet, there are 0 clicks. Display 0 stars.
+            bestProduceScore = String.valueOf(NOT_PLAYED);    //  If not played yet, there are 0 clicks. Display 0 stars.
         }
+
+        Toast.makeText(GroceryActivity.this,
+                "Welcome Back Magician!", Toast.LENGTH_SHORT)
+                .show();
 
         ImageView ps1 = (ImageView) findViewById(R.id.ps1);
         ImageView ps2 = (ImageView) findViewById(R.id.ps2);
         ImageView ps3 = (ImageView) findViewById(R.id.ps3);
-        if (Integer.parseInt(bestProduceScore) < GOOD && Integer.parseInt(bestProduceScore) != NOT_PLAYED) {
+        if (Integer.parseInt(bestProduceScore) < GOOD && Integer.parseInt(bestProduceScore) > NOT_PLAYED) {
             ps1.setBackgroundResource(R.drawable.ic_star);
             ps2.setBackgroundResource(R.drawable.ic_star);
             ps3.setBackgroundResource(R.drawable.ic_star);
@@ -133,25 +162,25 @@ public class GroceryActivity extends AppCompatActivity {
 
         // Deli progress
         //   Get player's stars from db to display
-        scores = dbHelper.getBestScore(MagiciansActivity.getMagician(), "produce");
+        scores = dbHelper.getBestScore(MagiciansActivity.getMagician(), "deli");
         String bestDeliScore;
         if (scores.size()>0) {
             bestDeliScore = scores.get(0);
         } else {
-            bestDeliScore = "0";    //  If not played yet, there are 0 clicks. Display 0 stars.
+            bestDeliScore = String.valueOf(NOT_PLAYED);   //  If not played yet, there are 0 clicks. Display 0 stars.
         }
         ImageView ds1 = (ImageView) findViewById(R.id.dels1);
         ImageView ds2 = (ImageView) findViewById(R.id.dels2);
         ImageView ds3 = (ImageView) findViewById(R.id.dels3);
-        if (Integer.parseInt(bestDeliScore) < GOOD && Integer.parseInt(bestDeliScore) != NOT_PLAYED) {
-            ps1.setBackgroundResource(R.drawable.ic_star);
-            ps2.setBackgroundResource(R.drawable.ic_star);
-            ps3.setBackgroundResource(R.drawable.ic_star);
+        if (Integer.parseInt(bestDeliScore) < GOOD && Integer.parseInt(bestDeliScore) > NOT_PLAYED) {
+            ds1.setBackgroundResource(R.drawable.ic_star);
+            ds2.setBackgroundResource(R.drawable.ic_star);
+            ds3.setBackgroundResource(R.drawable.ic_star);
         } else if (Integer.parseInt(bestDeliScore) >= GOOD && Integer.parseInt(bestDeliScore) < OKAY) {
-            ps2.setBackgroundResource(R.drawable.ic_star);
-            ps3.setBackgroundResource(R.drawable.ic_star);
+            ds2.setBackgroundResource(R.drawable.ic_star);
+            ds3.setBackgroundResource(R.drawable.ic_star);
         } else if (Integer.parseInt(bestDeliScore) < BAD && Integer.parseInt(bestDeliScore) > OKAY) {
-            ps3.setBackgroundResource(R.drawable.ic_star);
+            ds3.setBackgroundResource(R.drawable.ic_star);
         }
     }
 
@@ -209,6 +238,11 @@ public class GroceryActivity extends AppCompatActivity {
                 intent = new Intent(this, DeliActivity.class);
                 startActivity(intent);
                 break;
+
+            case R.id.back:
+                intent = new Intent(this, Locations.class);
+                startActivity(intent);
+                break;
 //
 //            case R.id.dairy:
 //             // Loads the screen for the protein information
@@ -226,6 +260,12 @@ public class GroceryActivity extends AppCompatActivity {
                 break;
         }
 
+    }
+    @Override
+    public void onBackPressed()
+    {
+        Intent intent = new Intent(this, Locations.class);
+        startActivity(intent);
     }
 
 }

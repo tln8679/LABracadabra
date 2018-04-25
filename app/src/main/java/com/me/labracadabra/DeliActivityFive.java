@@ -7,22 +7,8 @@ import android.view.View;
 import android.widget.ImageView;
 import com.amazonaws.mobileconnectors.pinpoint.analytics.AnalyticsEvent;
 
-/**
- * @author tln86
- * Created by Taylor Noble on 2/26/2018.
- * Filename: ProduceActivityFive.java
- * Purpose: This program file completes the produce section. It returns the amount of stars
- *          earned, logs to AWS, and puts the info into the SQLite dB
- * Revised: 4/6/2018 - made code cleaner
- * Data Structures: Uses a hash map for the TextToSpeech API. Strings and ints.
- * Reason for existence: Contains all of the learning modules for the grocery store.
- * Input: None
- * Extensions/Revisions: Different metrics for logging to aws could be used. Might have to
- *      create another dB column
- */
-public class ProduceActivityFive extends AppCompatActivity {
+public class DeliActivityFive extends AppCompatActivity {
     protected dbManager scoreHelper;
-
 
     /**
      * Created by Taylor Noble on 2/26/2018.
@@ -34,12 +20,12 @@ public class ProduceActivityFive extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_deli_five);
+        setContentView(R.layout.activity_produce_end);
         logEvent();
         score();
         scoreHelper = new dbManager(this);
         scoreHelper.deleteScore (MagiciansActivity.getMagician(), GroceryActivity.getActivity());
-        scoreHelper.insertNewScore(MagiciansActivity.getMagician(), ProduceActivity.getScore(),
+        scoreHelper.insertNewScore(MagiciansActivity.getMagician(), DeliActivity.getScore(),
                 GroceryActivity.getActivity());
     }
 
@@ -59,15 +45,15 @@ public class ProduceActivityFive extends AppCompatActivity {
         ImageView s1 = (ImageView) findViewById(R.id.s1);
         ImageView s2 = (ImageView) findViewById(R.id.s2);
         ImageView s3 = (ImageView) findViewById(R.id.s3);
-        System.out.println(ProduceActivity.getScore());
-        if (ProduceActivity.getScore() < GOOD) {
+
+        if (DeliActivity.getScore() < GOOD) {
             s1.setBackgroundResource(R.drawable.ic_star);
             s2.setBackgroundResource(R.drawable.ic_star);
             s3.setBackgroundResource(R.drawable.ic_star);
-        } else if (ProduceActivity.getScore() >= GOOD && ProduceActivity.getScore() < OKAY) {
+        } else if (DeliActivity.getScore() >= GOOD && DeliActivity.getScore() < OKAY) {
             s2.setBackgroundResource(R.drawable.ic_star);
             s3.setBackgroundResource(R.drawable.ic_star);
-        } else if (ProduceActivity.getScore() < BAD) {
+        } else if (DeliActivity.getScore() < BAD) {
             s3.setBackgroundResource(R.drawable.ic_star);
         }
 
@@ -108,15 +94,13 @@ public class ProduceActivityFive extends AppCompatActivity {
         LandingScreen.pinpointManager.getSessionClient().startSession();
         final AnalyticsEvent event =
                 LandingScreen.pinpointManager.getAnalyticsClient().createEvent("Custom Event")
-                .withAttribute("DemoAttribute1", "DemoAttributeValue1")
-                .withAttribute("DemoAttribute2", "DemoAttributeValue2")
-                .withMetric("DemoMetric1", (double)ProduceActivity.getScore());
+                        .withAttribute("DemoAttribute1", "DemoAttributeValue1")
+                        .withAttribute("DemoAttribute2", "DemoAttributeValue2")
+                        .withMetric("DemoMetric1", (double)DeliActivity.getScore());
         LandingScreen.pinpointManager.getAnalyticsClient().recordEvent(event);
         LandingScreen.pinpointManager.getSessionClient().stopSession();
         LandingScreen.pinpointManager.getAnalyticsClient().submitEvents();
 
     }
-
-
 
 }

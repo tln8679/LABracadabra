@@ -17,7 +17,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".GroceryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -29,7 +28,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.me.labracadabra.Locations" />
         </activity>
-
         <activity
             android:name=".ProduceActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -42,7 +40,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.me.labracadabra.GroceryActivity" />
         </activity>
-
         <activity
             android:name=".LandingScreen"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -54,6 +51,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
@@ -69,13 +67,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.me.labracadabra.MagiciansActivity" />
         </activity>
-
         <activity
             android:name=".MagiciansActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".ProduceActivityTwo"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -84,7 +80,6 @@
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar"
             tools:targetApi="jelly_bean" />
-
         <activity
             android:name=".ProduceActivityThree"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -93,7 +88,6 @@
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar"
             tools:targetApi="jelly_bean" />
-
         <activity
             android:name=".ProduceActivityFour"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -101,8 +95,10 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             tools:targetApi="jelly_bean" />
-        <activity android:name=".ProduceActivityFive" />
-
+        <activity
+            android:name=".ProduceActivityFive"
+            android:parentActivityName=".GroceryActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".DeliActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -110,13 +106,48 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
             tools:targetApi="jelly_bean" />
-
         <activity
             android:name=".DeliActivityTwo"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:parentActivityName=".GroceryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:targetApi="jelly_bean" />
+        <activity
+            android:name=".DeliActivityThree"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:parentActivityName=".GroceryActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:targetApi="jelly_bean" />
+        <activity
+            android:name=".DeliActivityFour"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:parentActivityName=".GroceryActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:targetApi="jelly_bean" />
+        <activity
+            android:name=".DeliActivityFive"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:parentActivityName=".GroceryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:targetApi="jelly_bean">
 
-        <activity android:name=".DeliActivityThree"
+        </activity>
+        <activity
+            android:name=".WebViewActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:parentActivityName=".GroceryActivity"
+            android:screenOrientation="portrait"
+            tools:targetApi="jelly_bean">
+
+        </activity>
+        <activity android:name=".UnderConstruction"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:parentActivityName=".Locations"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>

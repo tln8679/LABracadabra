@@ -133,4 +133,13 @@ public class MagiciansActivity extends AppCompatActivity {
         }
         super.onPause();
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        Intent intent = new Intent(this, MagiciansActivity.class);
+        startActivity(intent);
+    }
+
 }
+

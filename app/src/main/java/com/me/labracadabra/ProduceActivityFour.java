@@ -268,7 +268,7 @@ public class ProduceActivityFour extends AppCompatActivity {
                     }
                 }
                 else if(lc!=null){
-                    sound(CORRECT);
+                    sound(INCORRECT);
                     lc.setBackgroundColor(Color.RED);
                     blood.animate().rotationBy(900);
                     ProduceActivity.incrementScore();
