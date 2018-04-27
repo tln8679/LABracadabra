@@ -35,7 +35,7 @@ public class DeliActivity extends AppCompatActivity {
     private HashMap<String, String> onlineSpeech = new HashMap<>();
     protected final int SPEECH_INIT_TIME = 400;
     public final String CORRECT = "correct";
-    public final String INCORRECT = "incorrect";
+    public final String INCORRECT = "incorrectMessage";
 
     @Override
     /**

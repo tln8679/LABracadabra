@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/gText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:adjustViewBounds="true"
+                android:fontFamily="@font/aclonica"
+                android:text="1 dozen = 12. Crack a dozen eggs!"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                tools:targetApi="jelly_bean" />
+
+            <ImageView
+                android:id="@+id/egg1"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_below="@+id/gText"
+                android:layout_marginTop="20dp"
+                android:layout_toLeftOf="@id/egg2"
+                android:layout_toStartOf="@id/egg2"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/ic_boiled"
+                tools:targetApi="jelly_bean"
+                android:layout_marginEnd="50dp"
+                android:onClick="onClick"
+                />
+
+            <ImageView
+                android:id="@+id/egg2"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/gText"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/ic_boiled"
+                tools:targetApi="jelly_bean"
+                android:onClick="onClick"
+
+                />
+
+            <ImageView
+                android:id="@+id/egg3"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_below="@+id/gText"
+                android:background="@drawable/ic_boiled"
+                tools:targetApi="jelly_bean"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@id/egg2"
+                android:layout_marginLeft="50dp"
+                android:layout_marginStart="50dp"
+                android:layout_toEndOf="@id/egg2"
+                android:onClick="onClick"
+                />
+
+            <ImageView
+                android:id="@+id/egg4"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_below="@+id/egg2"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/ic_boiled"
+                tools:targetApi="jelly_bean"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="20dp"
+                android:layout_toLeftOf="@id/egg5"
+                android:layout_toStartOf="@id/egg5"
+                android:layout_marginEnd="50dp"
+                android:onClick="onClick"
+
+                />
+
+            <ImageView
+                android:id="@+id/egg5"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_below="@+id/egg2"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/ic_boiled"
+                tools:targetApi="jelly_bean"
+                android:contentDescription="TODO"
+                android:onClick="onClick"
+                />
+
+            <ImageView
+                android:id="@+id/egg6"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_below="@+id/egg2"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/ic_boiled"
+                tools:targetApi="jelly_bean"
+                android:layout_toRightOf="@id/egg5"
+                android:layout_toEndOf="@id/egg5"
+                android:layout_marginStart="50dp"
+                android:contentDescription="TODO"
+                android:onClick="onClick"
+                />
+
+            <ImageView
+                android:id="@+id/egg7"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_below="@+id/egg5"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/ic_boiled"
+                tools:targetApi="jelly_bean"
+                android:layout_toLeftOf="@id/egg8"
+                android:layout_toStartOf="@id/egg8"
+                android:layout_marginEnd="50dp"
+                android:onClick="onClick"
+                />
+
+            <ImageView
+                android:id="@+id/egg8"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_below="@+id/egg5"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/ic_boiled"
+                tools:targetApi="jelly_bean"
+                android:onClick="onClick"
+
+                />
+
+            <ImageView
+                android:id="@+id/egg9"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_below="@+id/egg5"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/ic_boiled"
+                tools:targetApi="jelly_bean"
+                android:layout_toRightOf="@id/egg8"
+                android:layout_toEndOf="@id/egg8"
+                android:layout_marginLeft="50dp"
+                android:layout_marginStart="50dp"
+                android:onClick="onClick"
+                />
+
+            <ImageView
+                android:id="@+id/egg10"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_below="@+id/egg8"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/ic_boiled"
+                tools:targetApi="jelly_bean"
+                android:layout_toLeftOf="@id/egg11"
+                android:layout_toStartOf="@id/egg11"
+                android:layout_marginEnd="50dp"
+                android:onClick="onClick"
+                />
+
+            <ImageView
+                android:id="@+id/egg11"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_below="@+id/egg8"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/ic_boiled"
+                tools:targetApi="jelly_bean"
+                android:onClick="onClick"
+                />
+
+            <ImageView
+                android:id="@+id/egg12"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_alignTop="@+id/egg10"
+                android:background="@drawable/ic_boiled"
+                tools:targetApi="jelly_bean"
+                android:layout_toRightOf="@id/egg11"
+                android:layout_marginLeft="50dp"
+                android:layout_toEndOf="@id/egg11"
+                android:layout_marginStart="50dp"
+                android:onClick="onClick"
+                />
+
+
+            <ProgressBar
+                android:id="@+id/Bar"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:layout_below="@id/egg12"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:progress="5" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</FrameLayout>

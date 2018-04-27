@@ -7,6 +7,7 @@ import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Button;
 import java.util.HashMap;
@@ -134,6 +135,8 @@ public class ProduceActivityThree extends AppCompatActivity {
      * Called: When an object is clicked (finger tap)
      */
     public void onClick(View v) {
+        ProgressBar bar = findViewById(R.id.Bar);
+        bar.incrementProgressBy(5);
         switch (v.getId()) {
 
             case R.id.vitamin_a:
@@ -184,5 +187,15 @@ public class ProduceActivityThree extends AppCompatActivity {
                 }
             default: break;
         }
+    }
+
+    /**
+     *
+     */
+    @Override
+    public void onBackPressed()
+    {
+        Intent intent = new Intent(this, ProduceActivityThree.class);
+        startActivity(intent);
     }
 }

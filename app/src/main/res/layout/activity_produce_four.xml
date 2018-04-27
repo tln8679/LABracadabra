@@ -6,13 +6,12 @@
     android:id="@+id/tblScroll"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:ignore="ExtraText">
     tools:context="com.me.labracadabra.GroceryActivity"
     tools:ignore="ExtraText">
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
 
         android:stretchColumns="*">
         <TextView
@@ -145,7 +144,20 @@
                 android:textStyle="bold" />
         </TableRow>
 
+        <TableRow>
+            <ProgressBar
+                android:id="@+id/Bar"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="250dp"
+                android:layout_height="20dp"
+                android:layout_below="@id/cabbage"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:progress="80" />
+        </TableRow>
 
         <!-- </ScrollView>-->
     </TableLayout>
+
+
 </ScrollView>

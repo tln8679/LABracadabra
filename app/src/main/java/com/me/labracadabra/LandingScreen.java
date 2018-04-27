@@ -28,7 +28,7 @@ import java.util.HashMap;
  */
 public class LandingScreen extends AppCompatActivity {
     public static PinpointManager pinpointManager;  // Test for aws logging (passed)
-    protected final int DISPLAY_LENGTH = 2400;    //  Length of time before transition to next screen
+    protected final int DISPLAY_LENGTH = 2700;    //  Length of time before transition to next screen
     private TextToSpeech reader;    //  Test synthesizer.
     //  Used to find a suitable voice from network synthesizer and pass it to the voice
     private HashMap<String, String> onlineSpeech = new HashMap<>();

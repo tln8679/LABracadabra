@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.me.labracadabra">
 
-    <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -12,6 +11,7 @@
 
     <application
         android:allowBackup="true"
+        android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -98,7 +98,8 @@
         <activity
             android:name=".ProduceActivityFive"
             android:parentActivityName=".GroceryActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            tools:targetApi="jelly_bean" />
         <activity
             android:name=".DeliActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -133,20 +134,67 @@
             android:parentActivityName=".GroceryActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            tools:targetApi="jelly_bean">
-
-        </activity>
+            tools:targetApi="jelly_bean" />
         <activity
             android:name=".WebViewActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:parentActivityName=".GroceryActivity"
             android:screenOrientation="portrait"
-            tools:targetApi="jelly_bean">
-
-        </activity>
-        <activity android:name=".UnderConstruction"
+            tools:targetApi="jelly_bean" />
+        <activity
+            android:name=".UnderConstruction"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:parentActivityName=".Locations"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:targetApi="jelly_bean" />
+        <activity
+            android:name=".DairyActivityOne"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DairyActivityTwo"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DairyActivityThree"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DairyActivityFour"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".DairyActivityEnd"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+        <activity android:name=".BakeryActivityOne"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+        <activity android:name=".BakeryActivityTwo"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+        <activity android:name=".BakeryActivityThree"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+        <activity android:name=".BakeryActivityFour"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+        <activity android:name=".BakeryActivityEnd"
+            android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>

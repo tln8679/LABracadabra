@@ -1,42 +1,47 @@
 package com.me.labracadabra;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import java.util.HashMap;
 
 /**
  * @author tln86
- * Created by Taylor Noble on 2/26/2018.
- * Filename: ProduceActivity.java
- * Purpose: This program file controls the first produce activity. It is a learning module for kids
+ * Created by Taylor Noble on 4/26/2018.
+ * Filename: BakeryActivityTwo.java
+ * Purpose: This program file controls the second bakery activity. It is a learning module for kids
  * to learn about science in the prodcue aisle of a grocery store.
- * Revised: 4/6/2018 - made code cleaner
+ * Revised: N/a
  * Data Structures: Uses a hash map for the TextToSpeech API. Strings and ints.
  * Reason for existence: Contains all of the learning modules for the grocery store.
  * Input: None
  * Extensions/Revisions: Given more specific content from the clients, and feed back from a focus
  * group of children, better games could be created
  */
-public class ProduceActivity extends AppCompatActivity {
+public class BakeryActivityTwo extends AppCompatActivity {
     // higher the number, means less stars
     private static int score = 0;
+
     public static int getScore() {
         return score;
     }
-    public static void incrementScore(){score+=1;}
+
+    public static void incrementScore() {
+        score += 1;
+    }
+
     private TextToSpeech reader;
     private HashMap<String, String> onlineSpeech = new HashMap<>();
     protected final int SPEECH_INIT_TIME = 400;
     protected final int DELAY_TRANSITION = 700;   // TIme for reader before screen switch
     public final String CORRECT = "correct";
-    public final String INCORRECT = "incorrectMessage";
-
+    public final String INCORRECT = "incorrect";
 
     /**
      * Created by Taylor Noble on 2/26/2018.
@@ -47,8 +52,8 @@ public class ProduceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_produce);
-        initReader();
+        setContentView(R.layout.activity_bakery_two);
+        initReader();   //  Reader reads opening instructions
     }
 
     /**
@@ -59,7 +64,7 @@ public class ProduceActivity extends AppCompatActivity {
      * Possible revisions: Professional reader v.s. Text synthesizer
      */
     public void initReader() {
-        final String initMessage = "Which one is not like the other?";
+        final String initMessage = "Which of the following is not found in a cake recipe";
         //  Creating a text2speech reader
         reader = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
@@ -70,7 +75,8 @@ public class ProduceActivity extends AppCompatActivity {
                 }
             }
         });
-        // wait a little for the initialization to complete
+        //  Wait a little for the initialization to complete
+        int SPEECH_INIT_TIME = 400;
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -94,7 +100,6 @@ public class ProduceActivity extends AppCompatActivity {
      * Purpose: If the screen is paused (app minimized, user launches next screen via some input
      * action, etc.), the reader needs to be killed.
      * Output:  None
-     * Called: Called when priority is taken from the screen (new intent started, etc.)
      */
     public void onPause() {
         super.onPause();
@@ -116,37 +121,44 @@ public class ProduceActivity extends AppCompatActivity {
     public void onClick(View v) {
         String toSpeak;
         switch (v.getId()) {
-            case R.id.banana:
+            case R.id.butter:
                 // Wrong answer
-                sound(INCORRECT);
+                incorrectMessage();
                 // Keeping track of # of wrong answers
-                score += 1;
+                BakeryActivityOne.incrementScore();
                 break;
 
-            case R.id.orange:
+            case R.id.chocolate:
+                // Wrong answer
+                incorrectMessage();
+                // Keeping track of # of wrong answers
+                BakeryActivityOne.incrementScore();
+                break;
+
+            case R.id.flour:
                 // Wrong answer
                 // Initializing reader
-                sound(INCORRECT);
+                incorrectMessage();
                 // Keeping track of # of wrong answers
-                score += 1;
+                BakeryActivityOne.incrementScore();
                 break;
 
-            case R.id.apples:
+            case R.id.egg:
                 // Wrong answer
-                sound(INCORRECT);
+                incorrectMessage();
                 // Keeping track of # of wrong answers
-                score += 1;
+                BakeryActivityOne.incrementScore();
                 break;
 
-            case R.id.chicken:
+            case R.id.chips:
                 // Move to next question
                 sound(CORRECT);
                 ProgressBar bar = findViewById(R.id.Bar);
-                bar.incrementProgressBy(19);
+                bar.incrementProgressBy(25);
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        Intent intent = new Intent(ProduceActivity.this, ProduceActivityTwo.class);
+                        Intent intent = new Intent(BakeryActivityTwo.this, BakeryActivityThree.class);
                         startActivity(intent);
                     }
                 }, DELAY_TRANSITION);
@@ -158,12 +170,23 @@ public class ProduceActivity extends AppCompatActivity {
     }
 
     /**
-     *
+     * Created by Taylor Noble 04/26/2018
+     * Purpose: To reduce duplicate code
+     */
+    public void incorrectMessage() {
+        Toast.makeText(BakeryActivityTwo.this,
+                "Incorrect!", Toast.LENGTH_SHORT)
+                .show();
+        sound(INCORRECT);
+    }
+
+    /**
+     * Created by Taylor Noble 4/26/2018
+     * Purpose: User needs to complete the activity (designers choice)
      */
     @Override
-    public void onBackPressed()
-    {
-        Intent intent = new Intent(this, ProduceActivity.class);
+    public void onBackPressed() {
+        Intent intent = new Intent(this, BakeryActivityTwo.class);
         startActivity(intent);
     }
 }

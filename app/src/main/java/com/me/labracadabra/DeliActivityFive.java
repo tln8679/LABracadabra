@@ -33,13 +33,13 @@ public class DeliActivityFive extends AppCompatActivity {
     /**
      * @author tln8679
      * Created by Taylor Noble on 2/26/2018.
-     * Purpose: Scores the user by incorrect choices and displays stars
+     * Purpose: Scores the user by incorrectMessage choices and displays stars
      * Revised: 4/7/2018 - Changed variables to constant
      * Called: on create (screen started)
      * Revisions/extensions: Use better/different scoring algorithm
      */
     public void score() {
-        int GOOD = 3;   // these following numbers represent number of incorrect clicks
+        int GOOD = 3;   // these following numbers represent number of incorrectMessage clicks
         int OKAY = 8;
         int BAD = 20;
         ImageView s1 = (ImageView) findViewById(R.id.s1);
@@ -103,4 +103,13 @@ public class DeliActivityFive extends AppCompatActivity {
 
     }
 
+    /**
+     *
+     */
+    @Override
+    public void onBackPressed()
+    {
+        Intent intent = new Intent(this, DeliActivityFive.class);
+        startActivity(intent);
+    }
 }

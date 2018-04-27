@@ -43,7 +43,7 @@ public class DeliActivityThree extends AppCompatActivity {
     private HashMap<String, String> onlineSpeech = new HashMap<>();
     protected final int SPEECH_INIT_TIME = 400;
     public final String CORRECT = "correct";
-    public final String INCORRECT = "incorrect";
+    public final String INCORRECT = "incorrectMessage";
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -53,7 +53,7 @@ public class DeliActivityThree extends AppCompatActivity {
         mainLayout = (RelativeLayout) findViewById(R.id.main);
         // Incorrect choices
         // cake
-        final ImageView cake = (ImageView) findViewById(R.id.cake);
+        final ImageView cake = (ImageView) findViewById(R.id.chips);
         cake.setOnTouchListener(onTouchListener());
         //apple
         final ImageView apple = (ImageView) findViewById(R.id.apple);
@@ -132,7 +132,7 @@ public class DeliActivityThree extends AppCompatActivity {
     public void onWindowFocusChanged (boolean hasFocus){
         // Incorrect choices
         // cake
-        final ImageView cake = (ImageView) findViewById(R.id.cake);
+        final ImageView cake = (ImageView) findViewById(R.id.chips);
         cakeStartX = (int) cake.getLeft();
         cakeStartY = (int) cake.getTop();
         //apple
@@ -210,7 +210,7 @@ public class DeliActivityThree extends AppCompatActivity {
                             DeliActivity.incrementScore();
                             res = "Incorrect";
                             sound(res);
-                            if (current == findViewById(R.id.cake)) {
+                            if (current == findViewById(R.id.chips)) {
                                 current.setX(cakeStartX);
                                 current.setY(cakeStartY);
                             }

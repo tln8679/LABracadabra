@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
+
 import java.util.HashMap;
 import java.util.ArrayList;
 
@@ -34,7 +36,7 @@ public class ProduceActivityFour extends AppCompatActivity {
     private HashMap<String, String> onlineSpeech = new HashMap<>();
     protected final int SPEECH_INIT_TIME = 400;
     public final String CORRECT = "correct";
-    public final String INCORRECT = "incorrect";
+    public final String INCORRECT = "incorrectMessage";
 
 
     /**
@@ -181,6 +183,8 @@ public class ProduceActivityFour extends AppCompatActivity {
                     sound(CORRECT);
                     vita.setBackgroundColor(Color.GREEN);
                     count += 1;
+                    ProgressBar bar = findViewById(R.id.Bar);
+                    bar.incrementProgressBy(5);
                     a = true;
                     for(int i =0; i <choices.size(); i++){
                         if(choices.get(i) == vita){
@@ -206,6 +210,8 @@ public class ProduceActivityFour extends AppCompatActivity {
                 Button bone = (Button) findViewById(R.id.bone);
                 if (lc==vitd && !d) {
                     sound(CORRECT);
+                    ProgressBar bar = findViewById(R.id.Bar);
+                    bar.incrementProgressBy(5);
                     vitd.setBackgroundColor(Color.GREEN);
                     count += 1;
                     d = true;
@@ -232,6 +238,8 @@ public class ProduceActivityFour extends AppCompatActivity {
                 Button lungs = (Button) findViewById(R.id.lungs);
                 if (lc==vite && !e) {
                     sound(CORRECT);
+                    ProgressBar bar = findViewById(R.id.Bar);
+                    bar.incrementProgressBy(5);
                     vite.setBackgroundColor(Color.GREEN);
                     count += 1;
                     e = true;
@@ -258,6 +266,8 @@ public class ProduceActivityFour extends AppCompatActivity {
                 Button blood = (Button) findViewById(R.id.blood);
                 if (lc==vitk && !k) {
                     sound(CORRECT);
+                    ProgressBar bar = findViewById(R.id.Bar);
+                    bar.incrementProgressBy(5);
                     vitk.setBackgroundColor(Color.GREEN);
                     count += 1;
                     k = true;
@@ -280,5 +290,15 @@ public class ProduceActivityFour extends AppCompatActivity {
                 break;
         }
 
+    }
+
+    /**
+     *
+     */
+    @Override
+    public void onBackPressed()
+    {
+        Intent intent = new Intent(this, ProduceActivityFour.class);
+        startActivity(intent);
     }
 }

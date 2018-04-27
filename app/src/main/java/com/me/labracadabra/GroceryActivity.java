@@ -125,7 +125,7 @@ public class GroceryActivity extends AppCompatActivity {
      *       and may be more expensive
      */
     private void loadScores() {
-        int GOOD = 3;   // these following numbers represent number of incorrect clicks
+        int GOOD = 3;   // these following numbers represent number of incorrectMessage clicks
         int NOT_PLAYED = -1;
         int OKAY = 8;
         int BAD = 20;
@@ -146,9 +146,9 @@ public class GroceryActivity extends AppCompatActivity {
                 "Welcome Back Magician!", Toast.LENGTH_SHORT)
                 .show();
 
-        ImageView ps1 = (ImageView) findViewById(R.id.ps1);
-        ImageView ps2 = (ImageView) findViewById(R.id.ps2);
-        ImageView ps3 = (ImageView) findViewById(R.id.ps3);
+        ImageView ps1 = findViewById(R.id.ps1);
+        ImageView ps2 = findViewById(R.id.ps2);
+        ImageView ps3 = findViewById(R.id.ps3);
         if (Integer.parseInt(bestProduceScore) < GOOD && Integer.parseInt(bestProduceScore) > NOT_PLAYED) {
             ps1.setBackgroundResource(R.drawable.ic_star);
             ps2.setBackgroundResource(R.drawable.ic_star);
@@ -169,9 +169,9 @@ public class GroceryActivity extends AppCompatActivity {
         } else {
             bestDeliScore = String.valueOf(NOT_PLAYED);   //  If not played yet, there are 0 clicks. Display 0 stars.
         }
-        ImageView ds1 = (ImageView) findViewById(R.id.dels1);
-        ImageView ds2 = (ImageView) findViewById(R.id.dels2);
-        ImageView ds3 = (ImageView) findViewById(R.id.dels3);
+        ImageView ds1 = findViewById(R.id.dels1);
+        ImageView ds2 = findViewById(R.id.dels2);
+        ImageView ds3 = findViewById(R.id.dels3);
         if (Integer.parseInt(bestDeliScore) < GOOD && Integer.parseInt(bestDeliScore) > NOT_PLAYED) {
             ds1.setBackgroundResource(R.drawable.ic_star);
             ds2.setBackgroundResource(R.drawable.ic_star);
@@ -182,7 +182,54 @@ public class GroceryActivity extends AppCompatActivity {
         } else if (Integer.parseInt(bestDeliScore) < BAD && Integer.parseInt(bestDeliScore) > OKAY) {
             ds3.setBackgroundResource(R.drawable.ic_star);
         }
+
+        // Dairy progress
+        //   Get player's stars from db to display
+        scores = dbHelper.getBestScore(MagiciansActivity.getMagician(), "dairy");
+        String bestDairyScore;
+        if (scores.size()>0) {
+            bestDairyScore = scores.get(0);
+        } else {
+            bestDairyScore = String.valueOf(NOT_PLAYED);   //  If not played yet, there are 0 clicks. Display 0 stars.
+        }
+        ImageView dairy1 = findViewById(R.id.ds1);
+        ImageView dairy2 = findViewById(R.id.ds2);
+        ImageView dairy3 = findViewById(R.id.ds3);
+        if (Integer.parseInt(bestDairyScore) < GOOD && Integer.parseInt(bestDairyScore) > NOT_PLAYED) {
+            dairy1.setBackgroundResource(R.drawable.ic_star);
+            dairy2.setBackgroundResource(R.drawable.ic_star);
+            dairy3.setBackgroundResource(R.drawable.ic_star);
+        } else if (Integer.parseInt(bestDairyScore) >= GOOD && Integer.parseInt(bestDairyScore) < OKAY) {
+            dairy2.setBackgroundResource(R.drawable.ic_star);
+            dairy3.setBackgroundResource(R.drawable.ic_star);
+        } else if (Integer.parseInt(bestDairyScore) < BAD && Integer.parseInt(bestDairyScore) > OKAY) {
+            dairy3.setBackgroundResource(R.drawable.ic_star);
+        }
+
+        // Bakery progress
+        //   Get player's stars from db to display
+        scores = dbHelper.getBestScore(MagiciansActivity.getMagician(), "bakery");
+        String bestBakeryScore;
+        if (scores.size()>0) {
+            bestBakeryScore = scores.get(0);
+        } else {
+            bestBakeryScore = String.valueOf(NOT_PLAYED);   //  If not played yet, there are 0 clicks. Display 0 stars.
+        }
+        ImageView bakery1 = findViewById(R.id.bs1);
+        ImageView bakery2 = findViewById(R.id.bs2);
+        ImageView bakery3 = findViewById(R.id.bs3);
+        if (Integer.parseInt(bestBakeryScore) < GOOD && Integer.parseInt(bestBakeryScore) > NOT_PLAYED) {
+            bakery1.setBackgroundResource(R.drawable.ic_star);
+            bakery2.setBackgroundResource(R.drawable.ic_star);
+            bakery3.setBackgroundResource(R.drawable.ic_star);
+        } else if (Integer.parseInt(bestBakeryScore) >= GOOD && Integer.parseInt(bestBakeryScore) < OKAY) {
+            bakery2.setBackgroundResource(R.drawable.ic_star);
+            bakery3.setBackgroundResource(R.drawable.ic_star);
+        } else if (Integer.parseInt(bestBakeryScore) < BAD && Integer.parseInt(bestBakeryScore) > OKAY) {
+            bakery3.setBackgroundResource(R.drawable.ic_star);
+        }
     }
+
 
     /**
      * Created by Taylor Noble on 4/6/2018.
@@ -243,18 +290,19 @@ public class GroceryActivity extends AppCompatActivity {
                 intent = new Intent(this, Locations.class);
                 startActivity(intent);
                 break;
-//
-//            case R.id.dairy:
-//             // Loads the screen for the protein information
-//             Intent proIntent = new Intent(this, ProteinActivity.class);
-//             startActivity(proIntent);
-//             break;
-//
-//             case R.id.bakery:
-//             // Loads the screen for the fats information
-//             Intent fatsIntent = new Intent(this, CarbsActivity.class);
-//             startActivity(fatsIntent);
-//             break;
+
+            case R.id.dairy:
+             // Loads the screen for the protein information
+                activity = "dairy";
+                Intent proIntent = new Intent(this, DairyActivityOne.class);
+             startActivity(proIntent);
+             break;
+
+             case R.id.bakery:
+             // Loads the screen for the fats information
+             Intent fatsIntent = new Intent(this, BakeryActivityOne.class);
+             startActivity(fatsIntent);
+             break;
 
             default:
                 break;

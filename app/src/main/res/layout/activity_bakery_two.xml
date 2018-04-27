@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/gText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:adjustViewBounds="true"
+                android:fontFamily="@font/aclonica"
+                android:text="Which of the following is not found in a cake recipe"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                tools:targetApi="jelly_bean" />
+
+            <ImageView
+                android:id="@+id/chips"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_below="@+id/gText"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/ic_chips"
+                android:onClick="onClick"
+                tools:targetApi="jelly_bean" />
+
+            <ImageView
+                android:id="@+id/flour"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_below="@+id/chips"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="12dp"
+                android:layout_toLeftOf="@id/egg2"
+                android:layout_toStartOf="@id/egg2"
+                android:background="@drawable/ic_flour"
+                android:onClick="onClick"
+                tools:targetApi="jelly_bean" />
+
+            <ImageView
+                android:id="@+id/egg"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_below="@+id/flour"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="12dp"
+                android:layout_toLeftOf="@id/egg2"
+                android:layout_toStartOf="@id/egg2"
+                android:background="@drawable/ic_boiled"
+                android:onClick="onClick"
+                tools:targetApi="jelly_bean" />
+
+            <ImageView
+                android:id="@+id/butter"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_below="@+id/egg"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="12dp"
+                android:layout_toLeftOf="@id/egg2"
+                android:layout_toStartOf="@id/egg2"
+                android:background="@drawable/ic_protein"
+                android:onClick="onClick"
+                tools:targetApi="jelly_bean" />
+
+            <ImageView
+                android:id="@+id/chocolate"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_below="@+id/butter"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="12dp"
+                android:layout_toLeftOf="@id/egg2"
+                android:layout_toStartOf="@id/egg2"
+                android:background="@drawable/ic_chocolate"
+                android:onClick="onClick"
+                tools:targetApi="jelly_bean" />
+
+
+
+
+
+            <ProgressBar
+                android:id="@+id/Bar"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:layout_below="@id/chocolate"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:progress="25" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</FrameLayout>
