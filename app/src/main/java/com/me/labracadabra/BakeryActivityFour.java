@@ -213,7 +213,7 @@ public class BakeryActivityFour extends AppCompatActivity {
      */
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(this, BakeryActivityThree.class);
+        Intent intent = new Intent(this, BakeryActivityFour.class);
         startActivity(intent);
     }
 }
