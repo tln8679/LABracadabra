@@ -54,7 +54,7 @@
                 />
 
             <ImageView
-                android:id="@+id/flour"
+                android:id="@+id/numdegrees"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_below="@+id/drop"
@@ -78,7 +78,7 @@
                 style="@android:style/Widget.ProgressBar.Horizontal"
                 android:layout_width="250dp"
                 android:layout_height="match_parent"
-                android:layout_below="@id/flour"
+                android:layout_below="@id/numdegrees"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="12dp"
                 android:progress="25" />

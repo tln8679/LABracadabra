@@ -111,7 +111,7 @@ public class DairyActivityFour extends AppCompatActivity {
     public void onClick(View v) {
         String toSpeak;
         switch (v.getId()) {
-            case R.id.egg:
+            case R.id.add:
                 // Wrong answer
                 incorrect();
                 // Keeping track of # of wrong answers
@@ -132,7 +132,7 @@ public class DairyActivityFour extends AppCompatActivity {
                 DairyActivityOne.incrementScore();
                 break;
 
-            case R.id.flour:
+            case R.id.numdegrees:
                 // Move to next question
                 sound("Moooooo" + CORRECT);
                 ProgressBar bar = findViewById(R.id.Bar);

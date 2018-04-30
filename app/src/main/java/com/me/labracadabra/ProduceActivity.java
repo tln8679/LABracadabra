@@ -35,7 +35,7 @@ public class ProduceActivity extends AppCompatActivity {
     protected final int SPEECH_INIT_TIME = 400;
     protected final int DELAY_TRANSITION = 700;   // TIme for reader before screen switch
     public final String CORRECT = "correct";
-    public final String INCORRECT = "incorrectMessage";
+    public final String INCORRECT = "incorrect";
 
 
     /**

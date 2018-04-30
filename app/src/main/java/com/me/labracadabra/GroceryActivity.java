@@ -294,14 +294,15 @@ public class GroceryActivity extends AppCompatActivity {
             case R.id.dairy:
              // Loads the screen for the protein information
                 activity = "dairy";
-                Intent proIntent = new Intent(this, DairyActivityOne.class);
-             startActivity(proIntent);
-             break;
+                Intent intent = new Intent(this, DairyActivityOne.class);
+                startActivity(intent);
+                 break;
 
              case R.id.bakery:
              // Loads the screen for the fats information
-             Intent fatsIntent = new Intent(this, BakeryActivityOne.class);
-             startActivity(fatsIntent);
+                 activity = "bakery";
+                 intent = new Intent(this, BakeryActivityOne.class);
+                 startActivity(intent);
              break;
 
             default:

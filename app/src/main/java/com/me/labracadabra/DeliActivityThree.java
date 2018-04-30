@@ -198,7 +198,10 @@ public class DeliActivityThree extends AppCompatActivity {
                             bar.incrementProgressBy(8);
                             res = "Correct";
                             sound(res);
-                            res = Boolean.toString(isContained(current, x, y));
+                            Toast.makeText(DeliActivityThree.this,
+                                    String.valueOf(correct.size()), Toast.LENGTH_SHORT)
+                                    .show();
+                            isContained(current, x, y);
                             if(correct.isEmpty()){
                                 Intent intent = new Intent(DeliActivityThree.this, DeliActivityFour.class);
                                 startActivity(intent);

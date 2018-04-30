@@ -96,7 +96,7 @@
             android:theme="@style/AppTheme.NoActionBar"
             tools:targetApi="jelly_bean" />
         <activity
-            android:name=".ProduceActivityFive"
+            android:name=".ProduceActivityEnd"
             android:parentActivityName=".GroceryActivity"
             android:screenOrientation="portrait"
             tools:targetApi="jelly_bean" />
@@ -129,7 +129,7 @@
             android:theme="@style/AppTheme.NoActionBar"
             tools:targetApi="jelly_bean" />
         <activity
-            android:name=".DeliActivityFive"
+            android:name=".DeliActivityEnd"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:parentActivityName=".GroceryActivity"
             android:screenOrientation="portrait"

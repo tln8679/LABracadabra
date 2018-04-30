@@ -36,7 +36,7 @@ public class ProduceActivityFour extends AppCompatActivity {
     private HashMap<String, String> onlineSpeech = new HashMap<>();
     protected final int SPEECH_INIT_TIME = 400;
     public final String CORRECT = "correct";
-    public final String INCORRECT = "incorrectMessage";
+    public final String INCORRECT = "incorrect";
 
 
     /**
@@ -200,7 +200,7 @@ public class ProduceActivityFour extends AppCompatActivity {
                 }
                 // When all 4 are correct, start next screen
                 if (count == 4){
-                    Intent intent = new Intent(this, ProduceActivityFive.class);
+                    Intent intent = new Intent(this, ProduceActivityEnd.class);
                     startActivity(intent);}
                 lc = null;
                 break;
@@ -228,7 +228,7 @@ public class ProduceActivityFour extends AppCompatActivity {
                     ProduceActivity.incrementScore();
                 }
                 if (count == 4){
-                    Intent intent = new Intent(this, ProduceActivityFive.class);
+                    Intent intent = new Intent(this, ProduceActivityEnd.class);
                     startActivity(intent);}
                 lc = null;
                 break;
@@ -256,7 +256,7 @@ public class ProduceActivityFour extends AppCompatActivity {
                     ProduceActivity.incrementScore();
                 }
                 if (count == 4){
-                    Intent intent = new Intent(this, ProduceActivityFive.class);
+                    Intent intent = new Intent(this, ProduceActivityEnd.class);
                     startActivity(intent);}
                 lc = null;
                 break;
@@ -284,7 +284,7 @@ public class ProduceActivityFour extends AppCompatActivity {
                     ProduceActivity.incrementScore();
                 }
                 if (count == 4){
-                    Intent intent = new Intent(this, ProduceActivityFive.class);
+                    Intent intent = new Intent(this, ProduceActivityEnd.class);
                     startActivity(intent);}
                 lc = null;
                 break;

@@ -40,7 +40,7 @@
                 tools:targetApi="jelly_bean" />
 
             <ImageView
-                android:id="@+id/flour"
+                android:id="@+id/numdegrees"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_below="@+id/chips"
@@ -55,10 +55,10 @@
                 tools:targetApi="jelly_bean" />
 
             <ImageView
-                android:id="@+id/egg"
+                android:id="@+id/add"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:layout_below="@+id/flour"
+                android:layout_below="@+id/numdegrees"
                 android:layout_centerHorizontal="true"
                 android:layout_marginEnd="50dp"
                 android:layout_marginRight="50dp"
@@ -73,7 +73,7 @@
                 android:id="@+id/butter"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:layout_below="@+id/egg"
+                android:layout_below="@+id/add"
                 android:layout_centerHorizontal="true"
                 android:layout_marginEnd="50dp"
                 android:layout_marginRight="50dp"

@@ -123,7 +123,7 @@ public class BakeryActivityOne extends AppCompatActivity {
                 BakeryActivityOne.incrementScore();
                 break;
 
-            case R.id.flour:
+            case R.id.numdegrees:
                 // Wrong answer
                 // Initializing reader
                 incorrectMessage();
@@ -131,7 +131,7 @@ public class BakeryActivityOne extends AppCompatActivity {
                 BakeryActivityOne.incrementScore();
                 break;
 
-            case R.id.egg:
+            case R.id.add:
                 // Wrong answer
                 incorrectMessage();
                 // Keeping track of # of wrong answers

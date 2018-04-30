@@ -1,9 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".BakeryActivityFour">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/gText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:adjustViewBounds="true"
+                android:fontFamily="@font/aclonica"
+                android:text="To bake a cake, first set the oven to 350 F. degrees"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                tools:targetApi="jelly_bean" />
+
+            <TextView
+                android:id="@+id/hours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/gText"
+                android:layout_toLeftOf="@+id/colon"
+                android:layout_marginTop="12dp"
+                android:text="00"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="42sp"
+                android:textStyle="bold"
+                tools:targetApi="jelly_bean"
+                android:layout_toStartOf="@+id/colon" />
+            <TextView
+                android:id="@+id/colon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/gText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:text=":"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="42sp"
+                android:textStyle="bold"
+                tools:targetApi="jelly_bean" />
+            <TextView
+                android:id="@+id/minutes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/gText"
+                android:layout_toRightOf="@+id/colon"
+                android:layout_marginTop="12dp"
+                android:text="00"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="42sp"
+                android:textStyle="bold"
+                tools:targetApi="jelly_bean"
+                android:layout_toEndOf="@+id/colon" />
+
+            <ImageView
+                android:id="@+id/add"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_below="@+id/hours"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:background="@android:drawable/ic_input_add"
+                android:onClick="onClick"
+                tools:targetApi="jelly_bean" />
+
+            <ImageView
+                android:id="@+id/sub"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_below="@+id/add"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/ic_minus"
+                android:onClick="onClick"
+                tools:targetApi="jelly_bean" />
+
+
+            <ProgressBar
+                android:id="@+id/Bar"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:layout_below="@id/sub"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:progress="75" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:id="@+id/nxt"
+                android:onClick="onClick"
+                android:layout_below="@id/Bar"
+                android:text=""
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                />
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</FrameLayout>

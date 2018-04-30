@@ -123,7 +123,7 @@ public class DairyActivityEnd extends AppCompatActivity {
     @Override
     public void onBackPressed()
     {
-        Intent intent = new Intent(this, DairyActivityEnd.class);
+        Intent intent = new Intent(this, GroceryActivity.class);
         startActivity(intent);
     }
 }

@@ -6,7 +6,6 @@ import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -116,7 +115,7 @@ public class DeliActivityFour extends AppCompatActivity {
                 ProgressBar bar = findViewById(R.id.Bar);
                 bar.incrementProgressBy(4);
                 if (STATUS == 16){
-                    Intent intent = new Intent(DeliActivityFour.this, DeliActivityFive.class);
+                    Intent intent = new Intent(DeliActivityFour.this, DeliActivityEnd.class);
                     startActivity(intent);
                     break;
                 }

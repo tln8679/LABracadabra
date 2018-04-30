@@ -35,7 +35,6 @@ public class BakeryActivityTwo extends AppCompatActivity {
     public static void incrementScore() {
         score += 1;
     }
-
     private TextToSpeech reader;
     private HashMap<String, String> onlineSpeech = new HashMap<>();
     protected final int SPEECH_INIT_TIME = 400;
@@ -135,7 +134,7 @@ public class BakeryActivityTwo extends AppCompatActivity {
                 BakeryActivityOne.incrementScore();
                 break;
 
-            case R.id.flour:
+            case R.id.numdegrees:
                 // Wrong answer
                 // Initializing reader
                 incorrectMessage();
@@ -143,7 +142,7 @@ public class BakeryActivityTwo extends AppCompatActivity {
                 BakeryActivityOne.incrementScore();
                 break;
 
-            case R.id.egg:
+            case R.id.add:
                 // Wrong answer
                 incorrectMessage();
                 // Keeping track of # of wrong answers

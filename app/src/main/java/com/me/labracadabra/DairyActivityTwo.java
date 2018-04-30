@@ -111,11 +111,11 @@ public class DairyActivityTwo extends AppCompatActivity {
     public void onClick(View v) {
         final int EMPTY = 0;
         final ImageView drop = findViewById(R.id.drop);
-        drop.setBackgroundResource(R.drawable.ic_drop);
-        sound("mooooooooooooooooooooooooo");
         if (count < 5) {
             ProgressBar bar = findViewById(R.id.Bar);
             bar.incrementProgressBy(5);
+            drop.setBackgroundResource(R.drawable.ic_drop);
+            sound("mooooooooooooooooooooooooo");
         }
         new Handler().postDelayed(new Runnable() {
             @Override

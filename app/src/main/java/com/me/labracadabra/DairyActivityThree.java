@@ -118,7 +118,7 @@ public class DairyActivityThree extends AppCompatActivity {
                 DairyActivityOne.incrementScore();
                 break;
 
-            case R.id.flour:
+            case R.id.numdegrees:
                 // Wrong answer
                 // Initializing reader
                 incorrectMessage();
@@ -133,7 +133,7 @@ public class DairyActivityThree extends AppCompatActivity {
                 DairyActivityOne.incrementScore();
                 break;
 
-            case R.id.egg:
+            case R.id.add:
                 // Move to next question
                 sound(CORRECT);
                 ProgressBar bar = findViewById(R.id.Bar);
