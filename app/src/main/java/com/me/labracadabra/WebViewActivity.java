@@ -25,7 +25,8 @@ public class WebViewActivity extends AppCompatActivity {
     private WebView webView;
 
     /**
-     *
+     * @author tln86
+     * Created by Taylor Noble on 4/20/2018.
      * @param savedInstanceState
      */
     @Override
@@ -44,7 +45,8 @@ public class WebViewActivity extends AppCompatActivity {
     }
 
     /**
-     *
+     * @author tln86
+     * Created by Taylor Noble on 4/20/2018.
      * @return the correct scaling for the web page on my phone
      */
     private int getScale(){

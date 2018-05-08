@@ -9,10 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         >
-
-
         <Button
             android:id="@+id/banana"
             style="@style/Widget.AppCompat.Button.Colored"
@@ -37,7 +34,6 @@
             android:background="@drawable/ic_apple"
             android:fontFamily="@font/aclonica"
             android:onClick="onClick"
-
             />
 
         <Button
@@ -75,7 +71,6 @@
             android:layout_marginTop="20dp"
             android:progress="1" />
 
-
     </RelativeLayout>
 
     <TextView
@@ -89,8 +84,4 @@
         android:textColor="@android:color/holo_orange_dark"
         android:textSize="30sp"
         android:textStyle="bold" />
-
-
-
 </FrameLayout>
-

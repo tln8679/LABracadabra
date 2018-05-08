@@ -43,7 +43,7 @@ public class BakeryActivityTwo extends AppCompatActivity {
     public final String INCORRECT = "incorrect";
 
     /**
-     * Created by Taylor Noble on 2/26/2018.
+     * Created by Taylor Noble on 4/26/2018.
      * If there is data in the Bundle, the activity will restore to it's previous state
      * Bundle is the default param for onCreate
      * Revised: 4/7/2018 - Broke this down into multiple functions for readability
@@ -56,7 +56,7 @@ public class BakeryActivityTwo extends AppCompatActivity {
     }
 
     /**
-     * Created by Taylor Noble on 4/3/2018.
+     * Created by Taylor Noble on 4/26/2018.
      * Purpose: Initialises the text to speech reader.
      * Important Note: Takes time after app launches to initialize, so I delay the speak function,
      * so it will not occur before the reader is initialized.
@@ -85,7 +85,7 @@ public class BakeryActivityTwo extends AppCompatActivity {
     }
 
     /**
-     * Created by Taylor Noble on 4/7/2018.
+     * Created by Taylor Noble on 4/26/2018.
      * Purpose: Calls the text readers speak method
      * Possible revision: Making a static string and passing it through the method may make this
      * function more reusable
@@ -95,7 +95,7 @@ public class BakeryActivityTwo extends AppCompatActivity {
     }
 
     /**
-     * Created by Taylor Noble on 4/6/2018.
+     * Created by Taylor Noble on 4/26/2018.
      * Purpose: If the screen is paused (app minimized, user launches next screen via some input
      * action, etc.), the reader needs to be killed.
      * Output:  None
@@ -109,7 +109,7 @@ public class BakeryActivityTwo extends AppCompatActivity {
     }
 
     /**
-     * Created by Taylor Noble on 2/26/2018.
+     * Created by Taylor Noble on 4/26/2018.
      *
      * @param v: the content view (resource layout xml file)
      *           Purpose: This method defines what happens when a button from the layout file is clicked

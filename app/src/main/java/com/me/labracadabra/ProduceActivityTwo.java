@@ -3,8 +3,8 @@ package com.me.labracadabra;
 import android.content.Intent;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import java.util.HashMap;
@@ -125,7 +125,8 @@ public class ProduceActivityTwo extends AppCompatActivity {
     }
 
     /**
-     *
+     * Created by Taylor Noble 4/26/2018
+     * Purpose: User needs to complete the activity (designers choice)
      */
     @Override
     public void onBackPressed()

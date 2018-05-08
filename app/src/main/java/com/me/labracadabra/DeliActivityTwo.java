@@ -143,6 +143,15 @@ public class DeliActivityTwo extends AppCompatActivity {
             default:
                 break;
         }
+    }
 
+    /**
+     * Created by Taylor Noble 4/26/2018
+     * Purpose: User needs to complete the activity (designers choice)
+     */
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, DeliActivityTwo.class);
+        startActivity(intent);
     }
 }

@@ -1,10 +1,10 @@
 package com.me.labracadabra;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -31,7 +31,7 @@ import java.util.List;
  * Extensions/Revisions: Given more specific content from the clients, and feed back from a focus
  *      group of children, better indirect learning games could be made
  */
-public class DeliActivityThree extends AppCompatActivity {
+public class DeliActivityThree extends Activity {
     private ViewGroup mainLayout;
     private int xDelta;
     private int yDelta;
@@ -42,8 +42,8 @@ public class DeliActivityThree extends AppCompatActivity {
     private TextToSpeech reader;
     private HashMap<String, String> onlineSpeech = new HashMap<>();
     protected final int SPEECH_INIT_TIME = 400;
-    public final String CORRECT = "correct";
-    public final String INCORRECT = "incorrectMessage";
+    protected final String CORRECT = "correct";
+    protected final String INCORRECT = "incorrect";
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -152,17 +152,15 @@ public class DeliActivityThree extends AppCompatActivity {
 
     }
 
-    public boolean isContained(ImageView image, int x, int y){
-        if (x < right && x > left && y < bottom && y > top){
+    public void isContained(ImageView image, int x, int y){
+        if (x < right && x > left && y < bottom && y > top) {
             for (Iterator<ImageView> iter = correct.listIterator(); iter.hasNext(); ) {
                 ImageView a = iter.next();
                 if (image == a) {
                     iter.remove();
                 }
             }
-            return true;
         }
-        else return false;
     }
 
 
@@ -198,9 +196,6 @@ public class DeliActivityThree extends AppCompatActivity {
                             bar.incrementProgressBy(8);
                             res = "Correct";
                             sound(res);
-                            Toast.makeText(DeliActivityThree.this,
-                                    String.valueOf(correct.size()), Toast.LENGTH_SHORT)
-                                    .show();
                             isContained(current, x, y);
                             if(correct.isEmpty()){
                                 Intent intent = new Intent(DeliActivityThree.this, DeliActivityFour.class);
@@ -247,6 +242,13 @@ public class DeliActivityThree extends AppCompatActivity {
             }
         };
     }
+    /**
+     * Created by Taylor Noble 4/26/2018
+     * Purpose: User needs to complete the activity (designers choice)
+     */
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, DeliActivityThree.class);
+        startActivity(intent);
+    }
 }
-
-

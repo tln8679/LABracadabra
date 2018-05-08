@@ -112,7 +112,6 @@ public class BakeryActivityThree extends AppCompatActivity {
      *           Called: When an object is clicked (finger tap)
      */
     public void onClick(View v) {
-        String toSpeak;
         switch (v.getId()) {
 
             case R.id.add:
@@ -155,7 +154,10 @@ public class BakeryActivityThree extends AppCompatActivity {
                 break;
 
             case R.id.nxt:
-                // Move to next question
+                // Move to next question if temperature is set
+                if(nxt == null || nxt.getText().toString().equals("")){
+                    break;
+                }
                 ProgressBar bar = findViewById(R.id.Bar);
                 bar.incrementProgressBy(25);
                 new Handler().postDelayed(new Runnable() {

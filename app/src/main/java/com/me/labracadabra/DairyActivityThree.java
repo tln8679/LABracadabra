@@ -14,10 +14,9 @@ import java.util.HashMap;
 /**
  * @author tln86
  * Created by Taylor Noble on 2/24/2018.
- * Filename: GroceryActivity.java
- * Purpose: This program file controls the grocery screen. On the grocery view there is a table
- *          layout of aisles in the grocery store. When a aisle is selected that learning module
- *          starts.
+ * Filename: DairyActivityThree.java
+ * Purpose: This program file controls the third dairy activity. It is a learning module for kids
+ *          to learn about science in the prodcue aisle of a grocery store.
  * Revised: 4/6/2018 - made code cleaner
  * Data Structures: Uses a hash map for the TextToSpeech API. Strings and ints.
  * Reason for existence: Contains all of the learning modules for the grocery store.

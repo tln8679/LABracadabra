@@ -13,11 +13,10 @@ import java.util.HashMap;
 
 /**
  * @author tln86
- * Created by Taylor Noble on 2/24/2018.
+ * Created by Taylor Noble on 4/20/2018
  * Filename: GroceryActivity.java
- * Purpose: This program file controls the grocery screen. On the grocery view there is a table
- *          layout of aisles in the grocery store. When a aisle is selected that learning module
- *          starts.
+ * Purpose: This program file controls the fourth dairy activity. It is a learning module for kids
+ *              to learn about science in the prodcue aisle of a grocery store.
  * Revised: 4/6/2018 - made code cleaner
  * Data Structures: Uses a hash map for the TextToSpeech API. Strings and ints.
  * Reason for existence: Contains all of the learning modules for the grocery store.
@@ -30,11 +29,11 @@ public class DairyActivityFour extends AppCompatActivity {
     private HashMap<String, String> onlineSpeech = new HashMap<>();
     protected final int SPEECH_INIT_TIME = 400;
     protected final int DELAY_TRANSITION = 700;   // Time for reader before screen switch
-    public final String CORRECT = "correct";
-    public final String INCORRECT = "incorrectMessage";
+    protected final String CORRECT = "correct";
+    protected final String INCORRECT = "incorrect";
 
     /**
-     * Created by Taylor Noble on 2/24/2018.
+     * Created by Taylor Noble on 4/20/2018
      * If there is data in the Bundle, the activity will restore to it's previous state
      * Bundle is the default param for onCreate
      * Revised: 4/7/2018 - Broke this down into multiple functions for readability
@@ -47,7 +46,7 @@ public class DairyActivityFour extends AppCompatActivity {
     }
 
     /**
-     * Created by Taylor Noble on 4/3/2018.
+     * Created by Taylor Noble on 4/20/2018
      * Purpose: Initialises the text to speech reader.
      * Important Note: Takes time after app launches to initialize, so I delay the speak function,
      *          so it will not occur before the reader is initialized.
@@ -76,7 +75,7 @@ public class DairyActivityFour extends AppCompatActivity {
     }
 
     /**
-     * Created by Taylor Noble on 4/7/2018.
+     * Created by Taylor Noble on 4/20/2018
      * Purpose: Calls the text readers speak method
      * Possible revision: Making a static string and passing it through the method may make this
      *          function more reusable
@@ -86,7 +85,7 @@ public class DairyActivityFour extends AppCompatActivity {
     }
 
     /**
-     * Created by Taylor Noble on 4/6/2018.
+     * Created by Taylor Noble on 4/20/2018
      * Purpose: If the screen is paused (app minimized, user launches next screen via some input
      *          action, etc.), the reader needs to be killed.
      * Output:  None
@@ -100,7 +99,7 @@ public class DairyActivityFour extends AppCompatActivity {
     }
 
     /**
-     * Created by Taylor Noble on 2/26/2018.
+     * Created by Taylor Noble on 4/20/2018
      *
      * @param v: the content view (resource layout xml file)
      *           Purpose: This method defines what happens when an image from the layout file is clicked
@@ -152,7 +151,7 @@ public class DairyActivityFour extends AppCompatActivity {
     }
 
     /**
-     * Created by Taylor Noble 04/26/2018
+     * Created by Taylor Noble 4/20/2018
      * Purpose: To reduce duplicate code
      */
     public void incorrect(){
@@ -163,7 +162,7 @@ public class DairyActivityFour extends AppCompatActivity {
     }
 
     /**
-     * Created by Taylor Noble 4/26/2018
+     * Created by Taylor Noble 4/20/2018
      * Purpose: User needs to complete the activity (designers choice)
      */
     @Override
@@ -173,4 +172,3 @@ public class DairyActivityFour extends AppCompatActivity {
         startActivity(intent);
     }
 }
-

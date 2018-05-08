@@ -85,10 +85,6 @@
                 android:onClick="onClick"
                 />
 
-
-
-
-
             <ProgressBar
                 android:id="@+id/Bar"
                 style="@android:style/Widget.ProgressBar.Horizontal"
@@ -102,6 +98,5 @@
         </RelativeLayout>
 
     </ScrollView>
-
 
 </FrameLayout>

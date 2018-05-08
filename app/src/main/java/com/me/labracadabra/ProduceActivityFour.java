@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
-
 import java.util.HashMap;
 import java.util.ArrayList;
 
@@ -35,8 +34,8 @@ public class ProduceActivityFour extends AppCompatActivity {
     private ArrayList<Button> choices = new ArrayList<>();
     private HashMap<String, String> onlineSpeech = new HashMap<>();
     protected final int SPEECH_INIT_TIME = 400;
-    public final String CORRECT = "correct";
-    public final String INCORRECT = "incorrect";
+    protected final String CORRECT = "correct";
+    protected final String INCORRECT = "incorrect";
 
 
     /**
@@ -293,7 +292,8 @@ public class ProduceActivityFour extends AppCompatActivity {
     }
 
     /**
-     *
+     * Created by Taylor Noble 4/26/2018
+     * Purpose: User needs to complete the activity (designers choice)
      */
     @Override
     public void onBackPressed()

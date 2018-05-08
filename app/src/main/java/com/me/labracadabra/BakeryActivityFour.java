@@ -38,7 +38,7 @@ public class BakeryActivityFour extends AppCompatActivity {
     protected String res;
 
     /**
-     * Created by Taylor Noble on 2/26/2018.
+     * Created by Taylor Noble on 4/28/2018.
      * If there is data in the Bundle, the activity will restore to it's previous state
      * Bundle is the default param for onCreate
      * Revised: 4/7/2018 - Broke this down into multiple functions for readability
@@ -51,14 +51,14 @@ public class BakeryActivityFour extends AppCompatActivity {
     }
 
     /**
-     * Created by Taylor Noble on 4/3/2018.
+     * Created by Taylor Noble on 4/28/2018.
      * Purpose: Initialises the text to speech reader.
      * Important Note: Takes time after app launches to initialize, so I delay the speak function,
      * so it will not occur before the reader is initialized.
      * Possible revisions: Professional reader v.s. Text synthesizer
      */
     public void initReader() {
-        final String initMessage = "Set the oven to three hundred and fifty degrees";
+        final String initMessage = "Set the timer to 30 minutes";
         //  Creating a text2speech reader
         reader = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
@@ -80,7 +80,7 @@ public class BakeryActivityFour extends AppCompatActivity {
     }
 
     /**
-     * Created by Taylor Noble on 4/7/2018.
+     * Created by Taylor Noble on 4/28/2018.
      * Purpose: Calls the text readers speak method
      * Possible revision: Making a static string and passing it through the method may make this
      * function more reusable
@@ -104,7 +104,7 @@ public class BakeryActivityFour extends AppCompatActivity {
     }
 
     /**
-     * Created by Taylor Noble on 2/26/2018.
+     * Created by Taylor Noble on 4/28/2018.
      *
      * @param v: the content view (resource layout xml file)
      *           Purpose: This method defines what happens when a button from the layout file is clicked
@@ -183,12 +183,19 @@ public class BakeryActivityFour extends AppCompatActivity {
                 } else {
                     // user needs to subtract
                     nxt.setText("");
-                    sound(hours.getText().toString()+ " hours and" + minutes.getText().toString() + "minutes");
+                    String showHours = hours.getText().toString();
+                    int tmp = Integer.parseInt(showHours);
+                    showHours = String.valueOf(tmp);
+                    sound(showHours + " hours and"
+                            + minutes.getText().toString() + "minutes");
                 }
                 break;
 
             case R.id.nxt:
-                // Move to next question
+                // Move to next question if clock is right
+                if(nxt == null || nxt.getText().toString().equals("")){
+                    break;
+                }
                 ProgressBar bar = findViewById(R.id.Bar);
                 bar.incrementProgressBy(25);
                 new Handler().postDelayed(new Runnable() {
@@ -208,8 +215,9 @@ public class BakeryActivityFour extends AppCompatActivity {
 
 
     /**
-     * Created by Taylor Noble 4/26/2018
-     * Purpose: User needs to complete the activity (designers choice)
+     * Created by Taylor Noble on 4/28/2018.
+     * Purpose: Defines what happens when the phone back button is pressed
+     * Output:  Resets the current screen
      */
     @Override
     public void onBackPressed() {

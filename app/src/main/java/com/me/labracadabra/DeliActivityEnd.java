@@ -7,9 +7,21 @@ import android.view.View;
 import android.widget.ImageView;
 import com.amazonaws.mobileconnectors.pinpoint.analytics.AnalyticsEvent;
 
+/**
+ * @author tln86
+ * Created by Taylor Noble on 02/26/2018.
+ * Filename: DeliActivityEnd.java
+ * Purpose: This program file controls the end of the Deli module. It saves the stars to the database
+ *          and analyzes the scores
+ * Revised: N/a
+ * Data Structures: Nothing special
+ * Reason for existence: Contains all of the learning modules for the grocery store.
+ * Input: None
+ * Extensions/Revisions: Given more specific content from the clients, and feed back from a focus
+ *      group of children, a better list of modules could be made
+ */
 public class DeliActivityEnd extends AppCompatActivity {
     protected dbManager scoreHelper;
-
     /**
      * Created by Taylor Noble on 2/26/2018.
      * If there is data in the Bundle, the activity will restore to it's previous state
@@ -100,11 +112,11 @@ public class DeliActivityEnd extends AppCompatActivity {
         LandingScreen.pinpointManager.getAnalyticsClient().recordEvent(event);
         LandingScreen.pinpointManager.getSessionClient().stopSession();
         LandingScreen.pinpointManager.getAnalyticsClient().submitEvents();
-
     }
 
     /**
-     *
+     * Created by Taylor Noble 4/22/2018
+     * Purpose: User needs to complete the activity (designers choice)
      */
     @Override
     public void onBackPressed()

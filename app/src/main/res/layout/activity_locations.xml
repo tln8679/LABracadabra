@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/tblScroll"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:ignore="ExtraText">
-    tools:context="com.me.labracadabra.GroceryActivity"
     tools:ignore="ExtraText">
 
     <TableLayout
@@ -43,7 +40,6 @@
                 android:textSize="36sp"
                 android:textStyle="bold" />
 
-
         </TableRow>
 
         <TableRow android:layout_width="wrap_content">
@@ -64,7 +60,6 @@
                 android:textColor="@android:color/black"
                 android:textSize="36sp"
                 android:textStyle="bold" />
-
         </TableRow>
 
         <TableRow>
@@ -83,7 +78,6 @@
                 android:textColor="@android:color/black"
                 android:textSize="36sp"
                 android:textStyle="bold" />
-
         </TableRow>
 
         <TableRow>
@@ -102,7 +96,6 @@
                 android:textColor="@android:color/background_dark"
                 android:textSize="36sp"
                 android:textStyle="bold" />
-
         </TableRow>
 
         <TableRow>
@@ -140,7 +133,5 @@
                 android:textSize="36sp"
                 android:textStyle="bold" />
         </TableRow>
-
-
     </TableLayout>
 </ScrollView>

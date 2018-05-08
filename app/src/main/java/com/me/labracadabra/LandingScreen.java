@@ -1,10 +1,11 @@
 package com.me.labracadabra;
 
 import android.speech.tts.TextToSpeech;
-import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
+
 import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amazonaws.mobileconnectors.pinpoint.PinpointManager;
 import com.amazonaws.mobileconnectors.pinpoint.PinpointConfiguration;
@@ -45,6 +46,12 @@ public class LandingScreen extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing_screen);
+    }
+
+    @Override
+    public void onStart (){
+        super.onStart();
+
         awsInit();  //  Connects to AWS backend
         logEvent(); // Testing Custom Metrics
         initReader(); // Text reader greets the user

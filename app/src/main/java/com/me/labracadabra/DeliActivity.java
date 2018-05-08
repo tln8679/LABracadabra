@@ -35,7 +35,7 @@ public class DeliActivity extends AppCompatActivity {
     private HashMap<String, String> onlineSpeech = new HashMap<>();
     protected final int SPEECH_INIT_TIME = 400;
     public final String CORRECT = "correct";
-    public final String INCORRECT = "incorrectMessage";
+    public final String INCORRECT = "incorrect";
 
     @Override
     /**
@@ -140,5 +140,16 @@ public class DeliActivity extends AppCompatActivity {
             default:
                 break;
         }
+    }
+
+    /**
+     * Created by Taylor Noble 4/22/2018
+     * Purpose: User needs to complete the activity (designers choice)
+     */
+    @Override
+    public void onBackPressed()
+    {
+        Intent intent = new Intent(this, DeliActivity.class);
+        startActivity(intent);
     }
 }

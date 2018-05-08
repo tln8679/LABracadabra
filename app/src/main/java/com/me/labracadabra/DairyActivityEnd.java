@@ -10,7 +10,7 @@ import com.amazonaws.mobileconnectors.pinpoint.analytics.AnalyticsEvent;
 
 /**
  * @author tln86
- * Created by Taylor Noble on 2/26/2018.
+ * Created by Taylor Noble on 4/22/2018
  * Filename: DairyyActivityEnd.java
  * Purpose: This program file controls the end of the dairy module. It saves the stars to the database
  *          and analyzes the scores
@@ -25,7 +25,7 @@ public class DairyActivityEnd extends AppCompatActivity {
     protected dbManager scoreHelper;
 
     /**
-     * Created by Taylor Noble on 2/26/2018.
+     * Created by Taylor Noble on 4/22/2018
      * If there is data in the Bundle, the activity will restore to it's previous state
      * Bundle is the default param for onCreate
      * Revised: 4/7/2018 - Broke this down into multiple functions for readability
@@ -46,7 +46,7 @@ public class DairyActivityEnd extends AppCompatActivity {
 
     /**
      * @author tln8679
-     * Created by Taylor Noble on 2/26/2018.
+     * Created by Taylor Noble on 4/22/2018
      * Purpose: Scores the user by incorrectMessage choices and displays stars
      * Revised: 4/7/2018 - Changed variables to constant
      * Called: on create (screen started)
@@ -75,7 +75,7 @@ public class DairyActivityEnd extends AppCompatActivity {
     }
 
     /**
-     * Created by Taylor Noble on 2/26/2018.
+     * Created by Taylor Noble on 4/22/2018
      *
      * @param v: the content view (resource layout xml file)
      * Purpose: This method defines what happens when a button from the layout file is clicked.
@@ -100,7 +100,7 @@ public class DairyActivityEnd extends AppCompatActivity {
     }
 
     /**
-     * Created by Taylor Noble on 3/6/2018.
+     * Created by Taylor Noble on 4/22/2018
      * Purpose: Defines the the attributes and analytics we log to pinpoint
      * Output:  Attributes and metrics will be viewable from the AWS console
      */
@@ -117,8 +117,10 @@ public class DairyActivityEnd extends AppCompatActivity {
 
     }
 
+
     /**
-     *
+     * Created by Taylor Noble 4/22/2018
+     * Purpose: User needs to complete the activity (designers choice)
      */
     @Override
     public void onBackPressed()

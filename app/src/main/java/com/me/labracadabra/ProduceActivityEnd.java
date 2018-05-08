@@ -118,7 +118,8 @@ public class ProduceActivityEnd extends AppCompatActivity {
     }
 
     /**
-     *
+     * Created by Taylor Noble 4/26/2018
+     * Purpose: User needs to complete the activity (designers choice)
      */
     @Override
     public void onBackPressed()
@@ -126,5 +127,4 @@ public class ProduceActivityEnd extends AppCompatActivity {
         Intent intent = new Intent(this, GroceryActivity.class);
         startActivity(intent);
     }
-
 }

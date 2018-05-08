@@ -10,9 +10,9 @@ import com.amazonaws.mobileconnectors.pinpoint.analytics.AnalyticsEvent;
 
 /**
  * @author tln86
- * Created by Taylor Noble on 2/26/2018.
- * Filename: DairyyBakeryEnd.java
- * Purpose: This program file controls the end of the dairy module. It saves the stars to the database
+ * Created by Taylor Noble on 05/01/2018.
+ * Filename: BakeryBakeryEnd.java
+ * Purpose: This program file controls the end of the bakery module. It saves the stars to the database
  *          and analyzes the scores
  * Revised: N/a
  * Data Structures: Nothing special
@@ -25,7 +25,7 @@ public class BakeryActivityEnd extends AppCompatActivity {
     protected dbManager scoreHelper;
 
     /**
-     * Created by Taylor Noble on 2/26/2018.
+     * Created by Taylor Noble on 05/01/2018.
      * If there is data in the Bundle, the activity will restore to it's previous state
      * Bundle is the default param for onCreate
      * Revised: 4/7/2018 - Broke this down into multiple functions for readability
@@ -46,9 +46,9 @@ public class BakeryActivityEnd extends AppCompatActivity {
 
     /**
      * @author tln8679
-     * Created by Taylor Noble on 2/26/2018.
-     * Purpose: Scores the user by incorrectMessage choices and displays stars
-     * Revised: 4/7/2018 - Changed variables to constant
+     * Created by Taylor Noble on 5/1/2018.
+     * Purpose: Scores the user by incorrect choices and displays stars
+     * Revised: 5/2/2018 - Changed variables to constant
      * Called: on create (screen started)
      * Revisions/extensions: Use better/different scoring algorithm
      */
@@ -75,7 +75,7 @@ public class BakeryActivityEnd extends AppCompatActivity {
     }
 
     /**
-     * Created by Taylor Noble on 2/26/2018.
+     * Created by Taylor Noble on 5/1/2018.
      *
      * @param v: the content view (resource layout xml file)
      *           Purpose: This method defines what happens when a button from the layout file is clicked.
@@ -100,16 +100,15 @@ public class BakeryActivityEnd extends AppCompatActivity {
     }
 
     /**
-     * Created by Taylor Noble on 3/6/2018.
+     * Created by Taylor Noble on 5/1/2018.
      * Purpose: Defines the the attributes and analytics we log to pinpoint
      * Output:  Attributes and metrics will be viewable from the AWS console
      */
     public void logEvent() {
         LandingScreen.pinpointManager.getSessionClient().startSession();
         final AnalyticsEvent event =
-                LandingScreen.pinpointManager.getAnalyticsClient().createEvent("Custom Event")
-                        .withAttribute("DemoAttribute1", "DemoAttributeValue1")
-                        .withAttribute("DemoAttribute2", "DemoAttributeValue2")
+                LandingScreen.pinpointManager.getAnalyticsClient().createEvent("BakeryScores")
+                        .withAttribute("Score", String.valueOf(BakeryActivityOne.getScore()))
                         .withMetric("DemoMetric1", (double) BakeryActivityOne.getScore());
         LandingScreen.pinpointManager.getAnalyticsClient().recordEvent(event);
         LandingScreen.pinpointManager.getSessionClient().stopSession();
@@ -118,7 +117,9 @@ public class BakeryActivityEnd extends AppCompatActivity {
     }
 
     /**
-     *
+     * Created by Taylor Noble on 5/1/2018.
+     * Purpose: Defines what happens when the phone back button is pressed
+     * Output:  Resets the current screen
      */
     @Override
     public void onBackPressed() {

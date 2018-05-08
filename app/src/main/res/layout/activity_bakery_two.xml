@@ -99,10 +99,6 @@
                 android:onClick="onClick"
                 tools:targetApi="jelly_bean" />
 
-
-
-
-
             <ProgressBar
                 android:id="@+id/Bar"
                 style="@android:style/Widget.ProgressBar.Horizontal"
@@ -116,6 +112,5 @@
         </RelativeLayout>
 
     </ScrollView>
-
 
 </FrameLayout>

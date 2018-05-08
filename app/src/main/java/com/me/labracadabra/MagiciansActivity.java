@@ -3,15 +3,15 @@ package com.me.labracadabra;
 import android.content.Intent;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import java.util.HashMap;
 
 /**
  * @author tln86
  * Created by Taylor Noble on 2/22/2018.
- * Filename: GroceryActivity.java
+ * Filename: MagiciansActivity.java
  * Purpose: This program file let's the user choose from one of three saved states. The saved
  *          states keep track of the users progress and display scores for each module.
  * Revised: 4/6/2018 - made code cleaner
@@ -30,13 +30,13 @@ public class MagiciansActivity extends AppCompatActivity {
     private HashMap<String, String> onlineSpeech = new HashMap<>();
     private final int SPEECH_INIT_TIME = 400;
 
-    @Override
     /**
      * Created by Taylor Noble on 2/20/2018.
      * If there is data in the Bundle, the activity will restore to it's previous state
      * Bundle is the default param for onCreate
      * Revised: 4/7/2018 - Broke this down into multiple functions for readability
      */
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_magicians);
@@ -134,12 +134,14 @@ public class MagiciansActivity extends AppCompatActivity {
         super.onPause();
     }
 
+    /**
+     * Created by Taylor Noble 4/26/2018
+     * Purpose: User needs to complete the activity (designers choice)
+     */
     @Override
     public void onBackPressed()
     {
         Intent intent = new Intent(this, MagiciansActivity.class);
         startActivity(intent);
     }
-
 }
-

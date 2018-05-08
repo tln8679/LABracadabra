@@ -124,6 +124,14 @@ public class DeliActivityFour extends AppCompatActivity {
             default:
                 break;
         }
-
+    }
+    /**
+     * Created by Taylor Noble 4/26/2018
+     * Purpose: User needs to complete the activity (designers choice)
+     */
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, DeliActivityFour.class);
+        startActivity(intent);
     }
 }
