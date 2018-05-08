@@ -12,7 +12,7 @@ import android.widget.Toast;
 import java.util.HashMap;
 
 /**
- * @author tln86
+ * @author tln8679
  * Created by Taylor Noble on 4/26/2018.
  * Filename: BakeryActivityOne.java
  * Purpose: This program file controls the first bakery activity. It is a learning module for kids
