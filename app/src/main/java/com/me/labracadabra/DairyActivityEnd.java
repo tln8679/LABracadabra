@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import com.amazonaws.mobileconnectors.pinpoint.analytics.AnalyticsEvent;
 
 /**
- * @author tln86
+ * @author tln8679
  * Created by Taylor Noble on 4/22/2018
  * Filename: DairyyActivityEnd.java
  * Purpose: This program file controls the end of the dairy module. It saves the stars to the database
